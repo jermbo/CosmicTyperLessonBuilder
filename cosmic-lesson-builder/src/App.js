@@ -38,13 +38,13 @@ class App extends React.Component {
   descriptionChange(event) {
     let steps = this.state.steps;
     steps[this.state.currentStep].description = event.target.value;
-    this.setState({ steps: steps});
+    this.setState({ steps: steps });
   }
 
   exampleChange(event) {
     let steps = this.state.steps;
     steps[this.state.currentStep].example = event.target.value;
-    this.setState({ steps: steps});
+    this.setState({ steps: steps });
   }
 
   nameChange(event) {
@@ -70,7 +70,8 @@ class App extends React.Component {
   }
 
   setCurrentStep(event) {
-    this.setState({ currentStep: event.currentTarget.value });
+    //divs do not have a value prop
+    this.setState({ currentStep: event.target.getAttribute('data-value') });
   }
 
   addStep() {
@@ -92,7 +93,8 @@ class App extends React.Component {
     });
 
     let steps = this.state.steps.map(function (step, index) {
-      return <li key={index} value={index} onClick={this.setCurrentStep}>{step.name}</li>
+      const isActive = index === this.state.currentStep;
+      return <div key={index} data-value={index} className={isActive ? 'step active' : 'step'} onClick={this.setCurrentStep}>{step.name}</div>
     }.bind(this));
 
     return (

@@ -31,14 +31,20 @@ input{
 }
 
 .test-container{
-flex:1;
+  flex:1;
 }
 
-li{
-cursor:pointer;
-padding:10px;
+.step{
+  list-style: none;
+  cursor:pointer;
+  padding:10px;
+  margin:4px;
 }
 
-li:hover{
+.step:hover{
   background-color:#ddd;
+}
+
+.step.active{
+  background-color:#eee;
 }

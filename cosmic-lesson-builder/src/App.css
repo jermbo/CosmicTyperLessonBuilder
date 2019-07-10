@@ -1,0 +1,20 @@
+label{
+  display:block;
+  padding:20px;
+}
+
+input{
+  display: block;
+}
+
+.task-container{
+  padding:20px;
+}
+
+.test-column{
+  display:flex;
+}
+
+.test-container{
+flex:1;
+}

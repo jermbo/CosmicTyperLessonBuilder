@@ -1,8 +1,8 @@
 import React from 'react';
 
 class TaskTest extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             item: '',
             value: ''

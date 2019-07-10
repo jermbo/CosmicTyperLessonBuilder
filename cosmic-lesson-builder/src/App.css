@@ -7,8 +7,23 @@ input{
   display: block;
 }
 
+.app-container{
+  padding:10px;
+  display:flex;
+}
+
+.step-legend{
+  flex:1;
+}
+
+.edit-step{
+  flex:1;
+}
+
 .task-container{
-  padding:20px;
+  margin:10px;
+  padding:10px;
+  border:1px solid #ddd;
 }
 
 .test-column{
@@ -17,4 +32,13 @@ input{
 
 .test-container{
 flex:1;
+}
+
+li{
+cursor:pointer;
+padding:10px;
+}
+
+li:hover{
+  background-color:#ddd;
 }

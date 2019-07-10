@@ -11,8 +11,8 @@ Task
       Value
 */
 class Task extends React.Component{
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             type:'',
             element:'',
@@ -53,22 +53,22 @@ class Task extends React.Component{
     render() {
         return (
             <div className="task-container">
+                <h3>Task</h3>
                 <label>
                     Type
-                        <input value={this.state.type} />
+                        <input value={this.state.type} onChange={this.typeChange}/>
                 </label>
                 <label>
                     Element
-                        <input value={this.state.element} />
+                        <input value={this.state.element}  onChange={this.elementChange}/>
                 </label>
                  <label>
                     Instructions 
-                        <input value={this.state.instructions} />
-                </label>
-                
+                        <input value={this.state.instructions}  onChange={this.instructionsChange}/>
+                </label>                
                 <label>
                     Hint
-                    <input value={this.state.hint} />
+                    <input value={this.state.hint}  onChange={this.hintChange}/>
                 </label> 
                 <TaskTest/>
             </div>

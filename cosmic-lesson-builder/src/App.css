@@ -1,10 +1,17 @@
 label{
   display:block;
-  padding:20px;
+  margin-bottom:10px;
 }
 
-input{
+input,textarea{
   display: block;
+  width:100%;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  cursor:pointer;
 }
 
 .app-container{
@@ -14,14 +21,15 @@ input{
 
 .step-legend{
   flex:1;
+  padding:20px;
 }
 
 .edit-step{
   flex:1;
+  padding:20px;
 }
 
 .task-container{
-  margin:10px;
   padding:10px;
   border:1px solid #ddd;
 }
@@ -36,13 +44,13 @@ input{
 
 .step{
   list-style: none;
-  cursor:pointer;
-  padding:10px;
-  margin:4px;
+  cursor:pointer; 
+  border:1px solid #ddd;
+  
+  margin-bottom:10px;
 }
 
 .step:hover{
-  background-color:#ddd;
 }
 
 .step.active{

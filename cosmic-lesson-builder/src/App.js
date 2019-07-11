@@ -15,6 +15,7 @@ desc, example, list of tasks
 */
 
 class App extends React.Component {
+  
   constructor() {
     super();
     this.state = {
@@ -26,6 +27,7 @@ class App extends React.Component {
         name: '0'
       }]
     };
+
     this.descriptionChange = this.descriptionChange.bind(this);
     this.exampleChange = this.exampleChange.bind(this);
     this.nameChange = this.nameChange.bind(this);
@@ -54,14 +56,12 @@ class App extends React.Component {
   }
 
   addTask() {
-    let steps = this.state.steps;
-    steps[this.state.currentStep].tasks.push({
+    this.state.steps[this.state.currentStep].tasks.push({
       item: '',
       value: ''
     });
-    this.setState(
-      {
-        steps: steps
+    this.setState({
+        steps: this.state.steps
       });
   }
 
@@ -71,7 +71,8 @@ class App extends React.Component {
 
   setCurrentStep(event) {
     //divs do not have a value prop
-    this.setState({ currentStep: event.target.getAttribute('data-value') });
+    const currentStep = event.target.getAttribute('data-value'); 
+    this.setState({ currentStep: currentStep });
   }
 
   addStep() {
@@ -93,7 +94,8 @@ class App extends React.Component {
     });
 
     let steps = this.state.steps.map(function (step, index) {
-      const isActive = index === this.state.currentStep;
+      const isActive = index == this.state.currentStep;
+      console.log(this.state.currentStep, index, isActive);
       return <div key={index} data-value={index} className={isActive ? 'step active' : 'step'} onClick={this.setCurrentStep}>{step.name}</div>
     }.bind(this));
 
@@ -107,7 +109,7 @@ class App extends React.Component {
           </label>
           <label>
             Step Description
-            <input value={step.description} onChange={this.descriptionChange} />
+            <textarea value={step.description} onChange={this.descriptionChange}></textarea>
           </label>
           <label>
             Step Example

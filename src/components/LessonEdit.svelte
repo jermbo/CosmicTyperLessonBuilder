@@ -1,7 +1,8 @@
 <script>
   // import LessonStepHTML from "./LessonStepHTML.svelte";
 
-  const API_URL = "http://localhost:5001/typer/lessons";
+  const API_URL = "http://localhost:5001/typer/api";
+  // const API_URL = "https://sampleapis.com/typer/api";
 
   const CATEGORY_TYPES = ["html-css", "general"];
   const DIFFICULTY_TYPES = ["easy", "medium", "hard"];
@@ -47,7 +48,21 @@
   }
 
   function saveLesson() {
-    console.log(lesson);
+    fetch(`${API_URL}/lessons`, {
+      method: "POST",
+      headers: {
+        'Content-Type': "application/json",
+      },
+      body: JSON.stringify(lesson),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log("success");
+        console.log(data);
+      })
+      .catch(err=> {
+        console.log(err)
+      })
   }
 </script>
 

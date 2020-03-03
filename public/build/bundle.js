@@ -423,7 +423,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (102:14) {#each CATEGORY_TYPES as type}
+    // (117:14) {#each CATEGORY_TYPES as type}
     function create_each_block_3(ctx) {
     	let option;
     	let t_value = /*type*/ ctx[20] + "";
@@ -436,7 +436,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[20];
     			option.value = option.__value;
-    			add_location(option, file, 102, 16, 2886);
+    			add_location(option, file, 117, 16, 3265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -452,14 +452,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(102:14) {#each CATEGORY_TYPES as type}",
+    		source: "(117:14) {#each CATEGORY_TYPES as type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (136:14) {#each DIFFICULTY_TYPES as type}
+    // (151:14) {#each DIFFICULTY_TYPES as type}
     function create_each_block_2(ctx) {
     	let option;
     	let t_value = /*type*/ ctx[20] + "";
@@ -472,7 +472,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[20];
     			option.value = option.__value;
-    			add_location(option, file, 136, 16, 4150);
+    			add_location(option, file, 151, 16, 4529);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -488,14 +488,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(136:14) {#each DIFFICULTY_TYPES as type}",
+    		source: "(151:14) {#each DIFFICULTY_TYPES as type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (156:8) {#if lesson.category == 'general'}
+    // (171:8) {#if lesson.category == 'general'}
     function create_if_block_2(ctx) {
     	let div;
     	let label;
@@ -512,13 +512,13 @@ var app = (function () {
     			textarea = element("textarea");
     			attr_dev(label, "for", "typeSteps");
     			attr_dev(label, "class", "text-gray-700 text-sm font-bold");
-    			add_location(label, file, 157, 12, 4826);
+    			add_location(label, file, 172, 12, 5205);
     			attr_dev(textarea, "class", "shadow appearance-none border rounded w-full py-2 px-3\n              text-gray-700 leading-tight focus:outline-none\n              focus:shadow-outline");
     			attr_dev(textarea, "id", "typeSteps");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file, 160, 12, 4951);
+    			add_location(textarea, file, 175, 12, 5330);
     			attr_dev(div, "class", "mb-4");
-    			add_location(div, file, 156, 10, 4795);
+    			add_location(div, file, 171, 10, 5174);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -538,14 +538,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(156:8) {#if lesson.category == 'general'}",
+    		source: "(171:8) {#if lesson.category == 'general'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (173:8) {#if lesson.category == 'html-css'}
+    // (188:8) {#if lesson.category == 'html-css'}
     function create_if_block(ctx) {
     	let button;
     	let t1;
@@ -565,9 +565,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
     			attr_dev(button, "class", "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4\n            rounded w-full");
-    			add_location(button, file, 173, 10, 5380);
+    			add_location(button, file, 188, 10, 5759);
     			attr_dev(hr, "class", "my-2");
-    			add_location(hr, file, 179, 10, 5583);
+    			add_location(hr, file, 194, 10, 5962);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -607,14 +607,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(173:8) {#if lesson.category == 'html-css'}",
+    		source: "(188:8) {#if lesson.category == 'html-css'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (182:10) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}
+    // (197:10) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}
     function create_if_block_1(ctx) {
     	let each_1_anchor;
     	let each_value = /*lesson*/ ctx[0].steps;
@@ -675,14 +675,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(182:10) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}",
+    		source: "(197:10) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (200:22) {#each LESSON_TYPES as type}
+    // (215:22) {#each LESSON_TYPES as type}
     function create_each_block_1(ctx) {
     	let option;
     	let t_value = /*type*/ ctx[20] + "";
@@ -695,7 +695,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[20];
     			option.value = option.__value;
-    			add_location(option, file, 200, 24, 6551);
+    			add_location(option, file, 215, 24, 6930);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -711,14 +711,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(200:22) {#each LESSON_TYPES as type}",
+    		source: "(215:22) {#each LESSON_TYPES as type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (183:12) {#each lesson.steps as step, i}
+    // (198:12) {#each lesson.steps as step, i}
     function create_each_block(ctx) {
     	let div5;
     	let div2;
@@ -808,50 +808,50 @@ var app = (function () {
     			t13 = space();
     			attr_dev(label0, "class", "text-gray-700 text-sm font-bold");
     			attr_dev(label0, "for", "type");
-    			add_location(label0, file, 186, 18, 5863);
+    			add_location(label0, file, 201, 18, 6242);
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file, 198, 22, 6436);
+    			add_location(option, file, 213, 22, 6815);
     			attr_dev(select, "name", "type");
     			attr_dev(select, "class", "block relative appearance-none w-full bg-white\n                      border border-gray-400 hover:border-gray-500 px-4 py-2\n                      pr-8 rounded shadow leading-tight focus:outline-none\n                      focus:shadow-outline");
     			if (/*lesson*/ ctx[0].steps[/*i*/ ctx[19]].type === void 0) add_render_callback(select_change_handler);
-    			add_location(select, file, 191, 20, 6043);
+    			add_location(select, file, 206, 20, 6422);
     			attr_dev(path, "d", "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10\n                          10.828 5.757 6.586 4.343 8z");
-    			add_location(path, file, 210, 24, 7018);
+    			add_location(path, file, 225, 24, 7397);
     			attr_dev(svg, "class", "fill-current h-4 w-4");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg, "viewBox", "0 0 20 20");
-    			add_location(svg, file, 206, 22, 6832);
+    			add_location(svg, file, 221, 22, 7211);
     			attr_dev(div0, "class", "pointer-events-none absolute inset-y-0 right-0 flex\n                      items-center px-2 text-gray-700");
-    			add_location(div0, file, 203, 20, 6668);
+    			add_location(div0, file, 218, 20, 7047);
     			attr_dev(div1, "class", "relative");
-    			add_location(div1, file, 190, 18, 6000);
+    			add_location(div1, file, 205, 18, 6379);
     			attr_dev(div2, "class", "mb-4");
-    			add_location(div2, file, 185, 16, 5826);
+    			add_location(div2, file, 200, 16, 6205);
     			attr_dev(label1, "class", "text-gray-700 text-sm font-bold");
     			attr_dev(label1, "for", "desc");
-    			add_location(label1, file, 221, 18, 7397);
+    			add_location(label1, file, 236, 18, 7776);
     			attr_dev(input, "class", "shadow appearance-none border rounded w-full py-2\n                    px-3 text-gray-700 leading-tight focus:outline-none\n                    focus:shadow-outline");
     			attr_dev(input, "id", "type");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Lesson Description");
-    			add_location(input, file, 224, 18, 7540);
+    			add_location(input, file, 239, 18, 7919);
     			attr_dev(div3, "class", "mb-4");
-    			add_location(div3, file, 220, 16, 7360);
+    			add_location(div3, file, 235, 16, 7739);
     			attr_dev(label2, "for", "typeSteps");
     			attr_dev(label2, "class", "text-gray-700 text-sm font-bold");
-    			add_location(label2, file, 237, 18, 8069);
+    			add_location(label2, file, 252, 18, 8448);
     			attr_dev(textarea, "data-index", textarea_data_index_value = /*i*/ ctx[19]);
     			attr_dev(textarea, "class", "shadow appearance-none border rounded w-full py-2\n                    px-3 text-gray-700 leading-tight focus:outline-none\n                    focus:shadow-outline");
     			attr_dev(textarea, "id", "typeSteps");
     			attr_dev(textarea, "rows", "5");
-    			add_location(textarea, file, 242, 18, 8252);
+    			add_location(textarea, file, 257, 18, 8631);
     			attr_dev(div4, "class", "mb-4");
-    			add_location(div4, file, 236, 16, 8032);
+    			add_location(div4, file, 251, 16, 8411);
     			attr_dev(button, "class", "bg-red-500 hover:bg-red-700 text-white font-bold p-2\n                  text-sm rounded");
-    			add_location(button, file, 253, 16, 8675);
+    			add_location(button, file, 268, 16, 9054);
     			attr_dev(div5, "class", "border-2 p-2 shadow-sm");
-    			add_location(div5, file, 183, 14, 5736);
+    			add_location(div5, file, 198, 14, 6115);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div5, anchor);
@@ -941,7 +941,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(183:12) {#each lesson.steps as step, i}",
+    		source: "(198:12) {#each lesson.steps as step, i}",
     		ctx
     	});
 
@@ -1092,86 +1092,86 @@ var app = (function () {
     			pre = element("pre");
     			t24 = text(t24_value);
     			attr_dev(h1, "class", "text-2xl");
-    			add_location(h1, file, 56, 4, 1253);
+    			add_location(h1, file, 71, 4, 1632);
     			attr_dev(button, "class", "bg-teal-500 hover:bg-teal-700 text-teal-100 font-light py-2 px-4\n      rounded tracking-wide");
-    			add_location(button, file, 57, 4, 1297);
+    			add_location(button, file, 72, 4, 1676);
     			attr_dev(header, "class", "header border-b-2 border-gray-400 py-4 mb-4 flex justify-between");
-    			add_location(header, file, 54, 2, 1163);
+    			add_location(header, file, 69, 2, 1542);
     			attr_dev(h20, "class", "text-lg font-bold");
-    			add_location(h20, file, 67, 8, 1617);
+    			add_location(h20, file, 82, 8, 1996);
     			attr_dev(div0, "class", "border-b-2 border-gray-400 p-2");
-    			add_location(div0, file, 66, 6, 1564);
+    			add_location(div0, file, 81, 6, 1943);
     			attr_dev(label0, "class", "text-gray-700 text-sm font-bold");
     			attr_dev(label0, "for", "title");
-    			add_location(label0, file, 73, 10, 1767);
+    			add_location(label0, file, 88, 10, 2146);
     			attr_dev(input, "class", "shadow appearance-none border rounded w-full py-2 px-3\n            text-gray-700 leading-tight focus:outline-none focus:shadow-outline");
     			attr_dev(input, "id", "title");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "Title");
-    			add_location(input, file, 76, 10, 1874);
+    			add_location(input, file, 91, 10, 2253);
     			attr_dev(div1, "class", "mb-4");
-    			add_location(div1, file, 72, 8, 1738);
+    			add_location(div1, file, 87, 8, 2117);
     			attr_dev(label1, "class", "text-gray-700 text-sm font-bold");
     			attr_dev(label1, "for", "category");
-    			add_location(label1, file, 88, 10, 2258);
+    			add_location(label1, file, 103, 10, 2637);
     			option0.__value = "";
     			option0.value = option0.__value;
-    			add_location(option0, file, 100, 14, 2781);
+    			add_location(option0, file, 115, 14, 3160);
     			attr_dev(select0, "name", "category");
     			attr_dev(select0, "class", "block relative appearance-none w-full bg-white border\n              border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded\n              shadow leading-tight focus:outline-none focus:shadow-outline");
     			if (/*lesson*/ ctx[0].category === void 0) add_render_callback(() => /*select0_change_handler*/ ctx[11].call(select0));
-    			add_location(select0, file, 93, 12, 2407);
+    			add_location(select0, file, 108, 12, 2786);
     			attr_dev(path0, "d", "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757\n                  6.586 4.343 8z");
-    			add_location(path0, file, 112, 16, 3273);
+    			add_location(path0, file, 127, 16, 3652);
     			attr_dev(svg0, "class", "fill-current h-4 w-4");
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "viewBox", "0 0 20 20");
-    			add_location(svg0, file, 108, 14, 3119);
+    			add_location(svg0, file, 123, 14, 3498);
     			attr_dev(div2, "class", "pointer-events-none absolute inset-y-0 right-0 flex\n              items-center px-2 text-gray-700");
-    			add_location(div2, file, 105, 12, 2979);
+    			add_location(div2, file, 120, 12, 3358);
     			attr_dev(div3, "class", "relative");
-    			add_location(div3, file, 92, 10, 2372);
+    			add_location(div3, file, 107, 10, 2751);
     			attr_dev(div4, "class", "mb-4");
-    			add_location(div4, file, 87, 8, 2229);
+    			add_location(div4, file, 102, 8, 2608);
     			attr_dev(label2, "class", "text-gray-700 text-sm font-bold");
     			attr_dev(label2, "for", "difficulty");
-    			add_location(label2, file, 123, 10, 3562);
+    			add_location(label2, file, 138, 10, 3941);
     			option1.__value = "";
     			option1.value = option1.__value;
-    			add_location(option1, file, 134, 14, 4041);
+    			add_location(option1, file, 149, 14, 4420);
     			attr_dev(select1, "name", "difficulty");
     			attr_dev(select1, "class", "block relative appearance-none w-full bg-white border\n              border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded\n              shadow leading-tight focus:outline-none focus:shadow-outline");
     			if (/*lesson*/ ctx[0].difficulty === void 0) add_render_callback(() => /*select1_change_handler*/ ctx[13].call(select1));
-    			add_location(select1, file, 128, 12, 3715);
+    			add_location(select1, file, 143, 12, 4094);
     			attr_dev(path1, "d", "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757\n                  6.586 4.343 8z");
-    			add_location(path1, file, 143, 16, 4454);
+    			add_location(path1, file, 158, 16, 4833);
     			attr_dev(svg1, "class", "fill-current h-4 w-4");
     			attr_dev(svg1, "viewBox", "0 0 20 20");
-    			add_location(svg1, file, 142, 14, 4383);
+    			add_location(svg1, file, 157, 14, 4762);
     			attr_dev(div5, "class", "pointer-events-none absolute inset-y-0 right-0 flex\n              items-center px-2 text-gray-700");
-    			add_location(div5, file, 139, 12, 4243);
+    			add_location(div5, file, 154, 12, 4622);
     			attr_dev(div6, "class", "relative");
-    			add_location(div6, file, 127, 10, 3680);
+    			add_location(div6, file, 142, 10, 4059);
     			attr_dev(div7, "class", "mb-4");
-    			add_location(div7, file, 122, 8, 3533);
+    			add_location(div7, file, 137, 8, 3912);
     			attr_dev(hr, "class", "mb-2");
-    			add_location(hr, file, 152, 8, 4688);
+    			add_location(hr, file, 167, 8, 5067);
     			attr_dev(div8, "class", "form p-2");
-    			add_location(div8, file, 70, 6, 1684);
+    			add_location(div8, file, 85, 6, 2063);
     			attr_dev(div9, "class", "form-wrapper flex-auto w-1/2 pr-2");
-    			add_location(div9, file, 65, 4, 1510);
+    			add_location(div9, file, 80, 4, 1889);
     			attr_dev(h21, "class", "text-lg font-bold");
-    			add_location(h21, file, 269, 8, 9149);
+    			add_location(h21, file, 284, 8, 9528);
     			attr_dev(div10, "class", "border-b-2 border-gray-400 p-2");
-    			add_location(div10, file, 268, 6, 9096);
+    			add_location(div10, file, 283, 6, 9475);
     			attr_dev(pre, "class", "text-xs p-2 overflow-x-auto");
-    			add_location(pre, file, 271, 6, 9215);
+    			add_location(pre, file, 286, 6, 9594);
     			attr_dev(div11, "class", "display flex-initial w-1/2 pl-2");
-    			add_location(div11, file, 267, 4, 9044);
+    			add_location(div11, file, 282, 4, 9423);
     			attr_dev(div12, "class", "flex");
-    			add_location(div12, file, 64, 2, 1487);
+    			add_location(div12, file, 79, 2, 1866);
     			attr_dev(section, "class", "container mx-auto bg-white shadow-md px-4 mt-4");
-    			add_location(section, file, 53, 0, 1096);
+    			add_location(section, file, 68, 0, 1475);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1362,7 +1362,7 @@ var app = (function () {
     	return block;
     }
 
-    const API_URL = "http://localhost:5001/typer/lessons";
+    const API_URL = "http://localhost:5001/typer/api";
 
     function instance($$self, $$props, $$invalidate) {
     	const CATEGORY_TYPES = ["html-css", "general"];
@@ -1410,7 +1410,16 @@ var app = (function () {
     	}
 
     	function saveLesson() {
-    		console.log(lesson);
+    		fetch(`${API_URL}/lessons`, {
+    			method: "POST",
+    			headers: { "Content-Type": "application/json" },
+    			body: JSON.stringify(lesson)
+    		}).then(resp => resp.json()).then(data => {
+    			console.log("success");
+    			console.log(data);
+    		}).catch(err => {
+    			console.log(err);
+    		});
     	}
 
     	function input_input_handler() {
@@ -1459,6 +1468,8 @@ var app = (function () {
     		addStep,
     		removeStep,
     		saveLesson,
+    		fetch,
+    		JSON,
     		console
     	});
 

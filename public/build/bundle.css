@@ -1,3 +1,4 @@
-*,*:before,*:after{box-sizing:border-box}html,body{position:relative;width:100%;height:100%;padding:0}body{color:#333;margin:0}a{color:#0064c8;text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#0050a0}
+p{margin-bottom:auto}
+.lesson.svelte-tko8d7:hover{background:#ebebeb !important}
 
 /*# sourceMappingURL=bundle.css.map */

@@ -9,22 +9,28 @@
     Input,
     Label,
   } from "sveltestrap";
+
+  // Components
   import TypingLesson from "./TypingLesson.svelte";
   import HTMLLesson from "./HTMLLesson.svelte";
 
-  const API_URL = "http://localhost:5001/typer/api";
-  // const API_URL = "https://sampleapis.com/typer/api";
+  // Stores
+  import { APP_STATE, API_URL } from "Stores/AppState.js";
+  // Helpers and Enums
+  import { AppStateEnums } from "Scripts/enum.js";
 
   const CATEGORY_TYPES = ["html-css", "general"];
   const DIFFICULTY_TYPES = ["easy", "medium", "hard"];
 
-  let lesson = {
-    // title: "",
-    // category: "html-css",
-    // difficulty: "",
+  const sampleLesson = {
+    title: "",
+    category: "",
+    difficulty: "",
     hasCompleted: false,
-    // steps: [],
+    steps: [],
   };
+
+  $: lesson = $APP_STATE.lessons[$APP_STATE.lessonIndex] || sampleLesson;
 
   function clearLessons() {
     lesson.steps = [];
@@ -32,6 +38,9 @@
 
   function addStep() {
     const newStep = {
+      type: "",
+      desc: "",
+      action: [],
       render: true,
     };
     lesson.steps = [...lesson.steps, newStep];
@@ -43,7 +52,7 @@
   }
 
   function saveLesson() {
-    fetch(`${API_URL}/lessons`, {
+    fetch(`${$API_URL}/lessons`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,8 +61,27 @@
     })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log("success");
-        console.log(data);
+        APP_STATE.setState(AppStateEnums.allLessons);
+        APP_STATE.setLessonIndex(-1);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function updateLesson() {
+    const id = $APP_STATE.lessons[$APP_STATE.lessonIndex].id;
+    fetch(`${$API_URL}/lessons/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(lesson),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        APP_STATE.setState(AppStateEnums.allLessons);
+        APP_STATE.setLessonIndex(-1);
       })
       .catch((err) => {
         console.log(err);
@@ -66,9 +94,15 @@
     <Col>
       <header>
         <h1 class="">Lesson Editor</h1>
-        <Button outline color="primary" on:click={saveLesson}>
-          Save Lesson
-        </Button>
+        {#if $APP_STATE.lessonIndex < 0}
+          <Button outline color="primary" on:click={saveLesson}>
+            Save Lesson
+          </Button>
+        {:else}
+          <Button outline color="primary" on:click={updateLesson}>
+            Update Lesson
+          </Button>
+        {/if}
       </header>
     </Col>
   </Row>

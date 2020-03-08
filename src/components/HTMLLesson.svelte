@@ -5,6 +5,9 @@
 
   const LESSON_TYPES = ["dom", "style"];
 
+  console.log(step.action);
+  $: weird = step.action.join("\n");
+
   function updateType(e) {
     e.target.value = step.type;
   }
@@ -39,6 +42,6 @@
     rows="8"
     name="htmlStep"
     id="htmlStep"
-    bind:value={step.action}
+    bind:value={weird}
     on:input={codeLesson} />
 </FormGroup>

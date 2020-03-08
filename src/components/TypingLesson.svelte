@@ -3,6 +3,8 @@
 
   export let steps;
 
+  $: weird = steps.join("\n");
+
   function typingLesson({ target }) {
     const val = target.value.split("\n");
     steps = val;
@@ -16,5 +18,6 @@
     rows="8"
     name="typingLesson"
     id="typingLesson"
+    bind:value={weird}
     on:input={typingLesson} />
 </FormGroup>

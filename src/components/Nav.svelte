@@ -1,16 +1,51 @@
-<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-5">
-  <h1 class="font-semibold text-xl tracking-tight text-white mr-6">
-    Lesson Builder
-  </h1>
+<script>
+  // Stores
+  import { APP_STATE } from "Stores/AppState.js";
 
-  <div class="flex-grow">
-    <div class="text-sm lg:flex-grow">
-      <a href={null} class="inline-block text-teal-300 hover:text-white mr-4">
+  // Helpers and Enums
+  import { AppStateEnums } from "Scripts/enum.js";
+
+  function updateState(state) {
+    APP_STATE.setState(state);
+  }
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a
+    class="navbar-brand"
+    href={null}
+    on:click|preventDefault={() => {
+      updateState(AppStateEnums.allLessons);
+    }}>
+    Typer Lesson Builder
+  </a>
+
+  <ul class="navbar-nav mr-auto">
+    <li
+      class="nav-item"
+      class:active={$APP_STATE.state == AppStateEnums.allLessons}>
+      <a
+        class="nav-link"
+        href={null}
+        on:click|preventDefault={() => {
+          updateState(AppStateEnums.allLessons);
+        }}>
         All Lessons
       </a>
-      <a href={null} class="inline-block text-teal-300 hover:text-white mr-4">
-        Add New Lesson
+    </li>
+    <li
+      class="nav-item"
+      class:active={$APP_STATE.state == AppStateEnums.editLesson}>
+      <a
+        class="nav-link"
+        href={null}
+        on:click|preventDefault={() => {
+          updateState(AppStateEnums.editLesson);
+          APP_STATE.setLessonIndex(-1);
+        }}>
+        Add Lesson
       </a>
-    </div>
-  </div>
+    </li>
+  </ul>
+
 </nav>

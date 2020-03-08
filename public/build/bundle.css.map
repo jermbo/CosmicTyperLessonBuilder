@@ -2,13 +2,11 @@
   "version": 3,
   "file": "bundle.css",
   "sources": [
-    "../../App.svelte",
     "../../Lesson.svelte"
   ],
   "sourcesContent": [
-    "<script>\n  // Components\n  import LessonList from \"Comps/LessonList.svelte\";\n  import LessonEdit from \"Comps/LessonEdit.svelte\";\n  import Nav from \"Comps/Nav.svelte\";\n\n  // Stores\n  import { APP_STATE } from \"Stores/AppState.js\";\n\n  // Helpers\n  import { AppStateEnums } from \"Scripts/enum.js\";\n\n  $: appState = $APP_STATE.state;\n</script>\n\n<style lang=\"scss\" global>:global(p) {\n  margin-bottom: auto; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9BcHAuc3ZlbHRlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CLEVBQUUiLCJmaWxlIjoic3JjL0FwcC5zdmVsdGUiLCJzb3VyY2VzQ29udGVudCI6WyJwIHtcbiAgbWFyZ2luLWJvdHRvbTogYXV0bzsgfVxuXG4vKiMgc291cmNlTWFwcGluZ1VSTD1BcHAuc3ZlbHRlLmNzcy5tYXAgKi8iXX0= */</style>\n\n<Nav />\n\n<main>\n  {#if !appState || appState == AppStateEnums.allLessons}\n    <LessonList />\n  {/if}\n\n  {#if appState == AppStateEnums.editLesson}\n    <LessonEdit />\n  {/if}\n</main>\n",
     "<script>\n  // Life Cycle\n  import { createEventDispatcher } from \"svelte\";\n\n  // Props\n  export let lesson;\n  export let index;\n\n  // Local Variables\n  const dispatch = createEventDispatcher();\n\n  // Stores\n  import { APP_STATE, API_URL } from \"Stores/AppState.js\";\n  // Helpers and Enums\n  import { AppStateEnums } from \"Scripts/enum.js\";\n\n  function editLesson(index) {\n    APP_STATE.setState(AppStateEnums.editLesson);\n    APP_STATE.setLessonIndex(index) \n  }\n\n  function removeLesson(index) {\n    dispatch(\"removeLesson\", index);\n  }\n</script>\n\n<style lang=\"scss\">.lesson:hover {\n  background: #ebebeb !important; }\n\n/*# sourceMappingURL=Lesson.svelte.css.map */</style>\n\n<div\n  class=\"lesson bg-light p-3 d-flex justify-content-center align-items-center\n  border-bottom\">\n  <p class=\"m-0\" on:click={() => editLesson(index)}>{lesson.title}</p>\n  <div class=\"actions d-flex ml-auto\">\n    <button\n      type=\"button\"\n      class=\"btn btn-primary btn-sm mr-2\"\n      on:click={() => editLesson(index)}>\n      Edit\n    </button>\n    <button\n      type=\"button\"\n      class=\"btn btn-danger btn-sm\"\n      on:click={() => removeLesson(index)}>\n      Delete\n    </button>\n  </div>\n</div>\n"
   ],
   "names": [],
-  "mappings": "AAekC,CAAC,AAAE,CAAC,AACpC,aAAa,CAAE,IAAI,AAAE,CAAC;ACUL,qBAAO,MAAM,AAAC,CAAC,AAChC,UAAU,CAAE,OAAO,CAAC,UAAU,AAAE,CAAC"
+  "mappings": "AA0BmB,qBAAO,MAAM,AAAC,CAAC,AAChC,UAAU,CAAE,OAAO,CAAC,UAAU,AAAE,CAAC"
 }

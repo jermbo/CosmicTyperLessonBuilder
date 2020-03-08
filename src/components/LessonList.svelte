@@ -1,14 +1,5 @@
 <script>
-  import {
-    Container,
-    Row,
-    Col,
-    Button,
-    Form,
-    FormGroup,
-    Input,
-    Label,
-  } from "sveltestrap";
+  import { Container, Row, Col, Button } from "sveltestrap";
 
   // Components
   import Lesson from "Comps/Lesson.svelte";
@@ -20,6 +11,19 @@
     const response = await fetch(`${$API_URL}/lessons`);
     const data = await response.json();
     APP_STATE.setLessons(data);
+  }
+
+  async function removeLesson({ detail }) {
+    const response = await fetch(`${$API_URL}/lessons/${detail}`, {
+      method: "DELETE",
+    });
+    if (response.status == 200) {
+      const lessons = $APP_STATE.lessons;
+      const item = lessons.find((lesson) => lesson.id == detail);
+      const indexOf = lessons.indexOf(item);
+      lessons.splice(indexOf, 1);
+      APP_STATE.setLessons(lessons);
+    }
   }
 
   getLessons();
@@ -39,7 +43,7 @@
       {:else}
         <p>Select a lesson.</p>
         {#each $APP_STATE.lessons as lesson, index}
-          <Lesson {lesson} {index} />
+          <Lesson {lesson} {index} on:triggerLessonRemove={removeLesson} />
         {/each}
       {/if}
     </Col>

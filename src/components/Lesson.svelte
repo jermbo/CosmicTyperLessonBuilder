@@ -16,11 +16,11 @@
 
   function editLesson(index) {
     APP_STATE.setState(AppStateEnums.editLesson);
-    APP_STATE.setLessonIndex(index) 
+    APP_STATE.setLessonIndex(index);
   }
 
-  function removeLesson(index) {
-    dispatch("removeLesson", index);
+  function removeLesson(id) {
+    dispatch("triggerLessonRemove", id);
   }
 </script>
 
@@ -46,7 +46,7 @@
     <button
       type="button"
       class="btn btn-danger btn-sm"
-      on:click={() => removeLesson(index)}>
+      on:click={() => removeLesson(lesson.id)}>
       Delete
     </button>
   </div>

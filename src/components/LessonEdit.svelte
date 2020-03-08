@@ -92,8 +92,11 @@
 <Container>
   <Row>
     <Col>
-      <header>
-        <h1 class="">Lesson Editor</h1>
+      <header class="my-4 d-flex justify-content-between">
+        <h3>
+          Edit
+          <small>{lesson.title}</small>
+        </h3>
         {#if $APP_STATE.lessonIndex < 0}
           <Button outline color="primary" on:click={saveLesson}>
             Save Lesson
@@ -146,26 +149,24 @@
         </select>
       </FormGroup>
 
-      <!-- General Section -->
       {#if lesson.category == 'general'}
         <TypingLesson bind:steps={lesson.steps} />
       {/if}
 
       {#if lesson.category == 'html-css'}
-        <Button outline color="secondary" on:click={addStep}>
+        <Button class="mb-2" outline color="secondary" on:click={addStep}>
           Add New Step
         </Button>
         {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}
-          {#each lesson.steps as step, i}
-            <HTMLLesson bind:step />
-            <Button on:click={() => removeStep(i)}>Remove Step</Button>
+          {#each lesson.steps as step, index}
+            <HTMLLesson {index} bind:step on:triggerRemove={removeStep} />
           {/each}
         {/if}
       {/if}
 
     </Col>
     <Col md="5">
-      <h2>JSON OutPut</h2>
+      <h4>JSON OutPut</h4>
       <pre>{JSON.stringify(lesson, null, 2)}</pre>
     </Col>
   </Row>

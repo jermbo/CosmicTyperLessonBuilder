@@ -4,7 +4,6 @@
 
   // Props
   export let lesson;
-  export let index;
 
   // Local Variables
   const dispatch = createEventDispatcher();

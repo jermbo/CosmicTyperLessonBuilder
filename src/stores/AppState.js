@@ -1,7 +1,13 @@
-import {writable , readable } from "svelte/store";
+import { writable, readable } from "svelte/store";
 import { AppStateEnums } from "Scripts/enum";
 
-const defaultState = { state: AppStateEnums.allLessons, lessons: [], currentLessonId: 0, filteredLessons: [] };
+const defaultState = {
+  state: AppStateEnums.allLessons,
+  lessons: [],
+  currentLessonId: 0,
+  filteredLessons: [],
+  filterCategory: "",
+};
 
 function CreateAppState() {
   const { subscribe, update } = writable(defaultState);
@@ -27,6 +33,13 @@ function CreateAppState() {
     });
   }
 
+  function setFilterCategory(category) {
+    update((obj) => {
+      obj.filterCategory = category;
+      return obj;
+    });
+  }
+
   function setCurrentLessonId(lessons) {
     update((obj) => {
       obj.currentLessonId = lessons;
@@ -39,7 +52,8 @@ function CreateAppState() {
     setState,
     setLessons,
     setFilteredLessons,
-    setCurrentLessonId
+    setFilterCategory,
+    setCurrentLessonId,
   };
 }
 

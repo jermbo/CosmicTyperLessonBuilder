@@ -17,7 +17,7 @@
   import { APP_STATE, API_URL } from "Stores/AppState.js";
   import { LessonCategory } from "Scripts/enum.js";
   let isOpen = false;
-  let filterOption = "";
+  $: filterCategory = $APP_STATE.filterCategory;
 
   async function getLessons() {
     const response = await fetch(`${$API_URL}/lessons`);
@@ -36,20 +36,20 @@
       const indexOf = lessons.indexOf(item);
       lessons.splice(indexOf, 1);
       APP_STATE.setLessons(lessons);
+      filterLessons();
     }
   }
 
   getLessons();
 
-  function filterLessons(category) {
-    if (!category) {
-      APP_STATE.setFilteredLessons($APP_STATE.lessons);
-      filterOption = "";
-      return;
-    }
-    filterOption = category;
-    const filtered = $APP_STATE.lessons.filter((lesson) => {
-      return lesson.category == category;
+  async function applyFilter(category = "") {
+    await APP_STATE.setFilterCategory(category);
+    filterLessons();
+  }
+
+  function filterLessons() {
+    let filtered = $APP_STATE.lessons.filter((lesson) => {
+      return filterCategory == "" ? true : lesson.category == filterCategory;
     });
     APP_STATE.setFilteredLessons(filtered);
   }
@@ -63,24 +63,24 @@
 
         <Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>
           <DropdownToggle caret>
-            {filterOption ? `Filtered : ${filterOption}` : 'Filter Options'}
+            {filterCategory ? `Filtered : ${filterCategory}` : 'Filter Options'}
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem
               on:click={() => {
-                filterLessons();
+                applyFilter();
               }}>
               Show All
             </DropdownItem>
             <DropdownItem
               on:click={() => {
-                filterLessons(LessonCategory.general);
+                applyFilter(LessonCategory.general);
               }}>
               General Typing
             </DropdownItem>
             <DropdownItem
               on:click={() => {
-                filterLessons(LessonCategory.html);
+                applyFilter(LessonCategory.html);
               }}>
               HTML & CSS
             </DropdownItem>
@@ -97,8 +97,8 @@
         <h4>Getting Lessons</h4>
       {:else}
         <p>Select a lesson.</p>
-        {#each $APP_STATE.filteredLessons as lesson, index}
-          <Lesson {lesson} {index} on:triggerLessonRemove={removeLesson} />
+        {#each $APP_STATE.filteredLessons as lesson}
+          <Lesson {lesson} on:triggerLessonRemove={removeLesson} />
         {/each}
       {/if}
     </Col>

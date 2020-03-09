@@ -9879,7 +9879,13 @@ var app = (function () {
       general: "general"
     };
 
-    const defaultState = { state: AppStateEnums.allLessons, lessons: [], currentLessonId: 0, filteredLessons: [] };
+    const defaultState = {
+      state: AppStateEnums.allLessons,
+      lessons: [],
+      currentLessonId: 0,
+      filteredLessons: [],
+      filterCategory: "",
+    };
 
     function CreateAppState() {
       const { subscribe, update } = writable(defaultState);
@@ -9905,6 +9911,13 @@ var app = (function () {
         });
       }
 
+      function setFilterCategory(category) {
+        update((obj) => {
+          obj.filterCategory = category;
+          return obj;
+        });
+      }
+
       function setCurrentLessonId(lessons) {
         update((obj) => {
           obj.currentLessonId = lessons;
@@ -9917,7 +9930,8 @@ var app = (function () {
         setState,
         setLessons,
         setFilteredLessons,
-        setCurrentLessonId
+        setFilterCategory,
+        setCurrentLessonId,
       };
     }
 
@@ -9955,17 +9969,17 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Delete";
     			attr_dev(p, "class", "m-0");
-    			add_location(p, file$n, 34, 2, 778);
+    			add_location(p, file$n, 33, 2, 758);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary btn-sm mr-2");
-    			add_location(button0, file$n, 36, 4, 894);
+    			add_location(button0, file$n, 35, 4, 874);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-danger btn-sm");
-    			add_location(button1, file$n, 42, 4, 1039);
+    			add_location(button1, file$n, 41, 4, 1019);
     			attr_dev(div0, "class", "actions d-flex ml-auto");
-    			add_location(div0, file$n, 35, 2, 853);
+    			add_location(div0, file$n, 34, 2, 833);
     			attr_dev(div1, "class", "lesson bg-light p-3 d-flex justify-content-center align-items-center\n  border-bottom svelte-tko8d7");
-    			add_location(div1, file$n, 31, 0, 675);
+    			add_location(div1, file$n, 30, 0, 655);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9981,9 +9995,9 @@ var app = (function () {
     			append_dev(div0, button1);
 
     			dispose = [
-    				listen_dev(p, "click", /*click_handler*/ ctx[4], false, false, false),
-    				listen_dev(button0, "click", /*click_handler_1*/ ctx[5], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_2*/ ctx[6], false, false, false)
+    				listen_dev(p, "click", /*click_handler*/ ctx[3], false, false, false),
+    				listen_dev(button0, "click", /*click_handler_1*/ ctx[4], false, false, false),
+    				listen_dev(button1, "click", /*click_handler_2*/ ctx[5], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -10015,7 +10029,6 @@ var app = (function () {
 
     function instance$n($$self, $$props, $$invalidate) {
     	let { lesson } = $$props;
-    	let { index } = $$props;
 
     	// Local Variables
     	const dispatch = createEventDispatcher();
@@ -10024,7 +10037,7 @@ var app = (function () {
     		dispatch("triggerLessonRemove", id);
     	}
 
-    	const writable_props = ["lesson", "index"];
+    	const writable_props = ["lesson"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Lesson> was created with unknown prop '${key}'`);
@@ -10038,13 +10051,11 @@ var app = (function () {
 
     	$$self.$set = $$props => {
     		if ("lesson" in $$props) $$invalidate(0, lesson = $$props.lesson);
-    		if ("index" in $$props) $$invalidate(2, index = $$props.index);
     	};
 
     	$$self.$capture_state = () => ({
     		createEventDispatcher,
     		lesson,
-    		index,
     		dispatch,
     		APP_STATE,
     		API_URL,
@@ -10055,7 +10066,6 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("lesson" in $$props) $$invalidate(0, lesson = $$props.lesson);
-    		if ("index" in $$props) $$invalidate(2, index = $$props.index);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10065,7 +10075,6 @@ var app = (function () {
     	return [
     		lesson,
     		removeLesson,
-    		index,
     		dispatch,
     		click_handler,
     		click_handler_1,
@@ -10076,7 +10085,7 @@ var app = (function () {
     class Lesson extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$n, create_fragment$n, safe_not_equal, { lesson: 0, index: 2 });
+    		init(this, options, instance$n, create_fragment$n, safe_not_equal, { lesson: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -10091,10 +10100,6 @@ var app = (function () {
     		if (/*lesson*/ ctx[0] === undefined && !("lesson" in props)) {
     			console.warn("<Lesson> was created without expected prop 'lesson'");
     		}
-
-    		if (/*index*/ ctx[2] === undefined && !("index" in props)) {
-    			console.warn("<Lesson> was created without expected prop 'index'");
-    		}
     	}
 
     	get lesson() {
@@ -10104,14 +10109,6 @@ var app = (function () {
     	set lesson(value) {
     		throw new Error("<Lesson>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
-
-    	get index() {
-    		throw new Error("<Lesson>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set index(value) {
-    		throw new Error("<Lesson>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
     }
 
     /* src/components/LessonList.svelte generated by Svelte v3.19.2 */
@@ -10119,15 +10116,14 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
-    	child_ctx[13] = i;
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
     // (65:10) <DropdownToggle caret>
     function create_default_slot_10(ctx) {
-    	let t_value = (/*filterOption*/ ctx[1]
-    	? `Filtered : ${/*filterOption*/ ctx[1]}`
+    	let t_value = (/*filterCategory*/ ctx[1]
+    	? `Filtered : ${/*filterCategory*/ ctx[1]}`
     	: "Filter Options") + "";
 
     	let t;
@@ -10140,8 +10136,8 @@ var app = (function () {
     			insert_dev(target, t, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*filterOption*/ 2 && t_value !== (t_value = (/*filterOption*/ ctx[1]
-    			? `Filtered : ${/*filterOption*/ ctx[1]}`
+    			if (dirty & /*filterCategory*/ 2 && t_value !== (t_value = (/*filterCategory*/ ctx[1]
+    			? `Filtered : ${/*filterCategory*/ ctx[1]}`
     			: "Filter Options") + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
@@ -10160,7 +10156,7 @@ var app = (function () {
     	return block;
     }
 
-    // (69:12) <DropdownItem               on:click={() => {                 filterLessons();               }}>
+    // (69:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>
     function create_default_slot_9(ctx) {
     	let t;
 
@@ -10180,14 +10176,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(69:12) <DropdownItem               on:click={() => {                 filterLessons();               }}>",
+    		source: "(69:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:12) <DropdownItem               on:click={() => {                 filterLessons(LessonCategory.general);               }}>
+    // (75:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>
     function create_default_slot_8(ctx) {
     	let t;
 
@@ -10207,14 +10203,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(75:12) <DropdownItem               on:click={() => {                 filterLessons(LessonCategory.general);               }}>",
+    		source: "(75:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:12) <DropdownItem               on:click={() => {                 filterLessons(LessonCategory.html);               }}>
+    // (81:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -10234,7 +10230,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(81:12) <DropdownItem               on:click={() => {                 filterLessons(LessonCategory.html);               }}>",
+    		source: "(81:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>",
     		ctx
     	});
 
@@ -10255,7 +10251,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	dropdownitem0.$on("click", /*click_handler*/ ctx[7]);
+    	dropdownitem0.$on("click", /*click_handler*/ ctx[8]);
 
     	const dropdownitem1 = new DropdownItem({
     			props: {
@@ -10265,7 +10261,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	dropdownitem1.$on("click", /*click_handler_1*/ ctx[8]);
+    	dropdownitem1.$on("click", /*click_handler_1*/ ctx[9]);
 
     	const dropdownitem2 = new DropdownItem({
     			props: {
@@ -10275,7 +10271,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	dropdownitem2.$on("click", /*click_handler_2*/ ctx[9]);
+    	dropdownitem2.$on("click", /*click_handler_2*/ ctx[10]);
 
     	const block = {
     		c: function create() {
@@ -10296,21 +10292,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const dropdownitem0_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 32768) {
     				dropdownitem0_changes.$$scope = { dirty, ctx };
     			}
 
     			dropdownitem0.$set(dropdownitem0_changes);
     			const dropdownitem1_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 32768) {
     				dropdownitem1_changes.$$scope = { dirty, ctx };
     			}
 
     			dropdownitem1.$set(dropdownitem1_changes);
     			const dropdownitem2_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 32768) {
     				dropdownitem2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10386,14 +10382,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const dropdowntoggle_changes = {};
 
-    			if (dirty & /*$$scope, filterOption*/ 16386) {
+    			if (dirty & /*$$scope, filterCategory*/ 32770) {
     				dropdowntoggle_changes.$$scope = { dirty, ctx };
     			}
 
     			dropdowntoggle.$set(dropdowntoggle_changes);
     			const dropdownmenu_changes = {};
 
-    			if (dirty & /*$$scope*/ 16384) {
+    			if (dirty & /*$$scope*/ 32768) {
     				dropdownmenu_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10438,7 +10434,7 @@ var app = (function () {
     	const dropdown = new Dropdown({
     			props: {
     				isOpen: /*isOpen*/ ctx[0],
-    				toggle: /*func*/ ctx[10],
+    				toggle: /*func*/ ctx[11],
     				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }
     			},
@@ -10452,9 +10448,9 @@ var app = (function () {
     			h3.textContent = "Lesson List";
     			t1 = space();
     			create_component(dropdown.$$.fragment);
-    			add_location(h3, file$o, 61, 8, 1483);
+    			add_location(h3, file$o, 61, 8, 1526);
     			attr_dev(header, "class", "my-4 d-flex justify-content-between");
-    			add_location(header, file$o, 60, 6, 1422);
+    			add_location(header, file$o, 60, 6, 1465);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -10466,9 +10462,9 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const dropdown_changes = {};
     			if (dirty & /*isOpen*/ 1) dropdown_changes.isOpen = /*isOpen*/ ctx[0];
-    			if (dirty & /*isOpen*/ 1) dropdown_changes.toggle = /*func*/ ctx[10];
+    			if (dirty & /*isOpen*/ 1) dropdown_changes.toggle = /*func*/ ctx[11];
 
-    			if (dirty & /*$$scope, filterOption*/ 16386) {
+    			if (dirty & /*$$scope, filterCategory*/ 32770) {
     				dropdown_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10523,7 +10519,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const col_changes = {};
 
-    			if (dirty & /*$$scope, isOpen, filterOption*/ 16387) {
+    			if (dirty & /*$$scope, isOpen, filterCategory*/ 32771) {
     				col_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10583,7 +10579,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty();
-    			add_location(p, file$o, 98, 8, 2455);
+    			add_location(p, file$o, 98, 8, 2496);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10670,7 +10666,7 @@ var app = (function () {
     		c: function create() {
     			h4 = element("h4");
     			h4.textContent = "Getting Lessons";
-    			add_location(h4, file$o, 96, 8, 2408);
+    			add_location(h4, file$o, 96, 8, 2449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -10694,15 +10690,12 @@ var app = (function () {
     	return block;
     }
 
-    // (100:8) {#each $APP_STATE.filteredLessons as lesson, index}
+    // (100:8) {#each $APP_STATE.filteredLessons as lesson}
     function create_each_block(ctx) {
     	let current;
 
     	const lesson = new Lesson({
-    			props: {
-    				lesson: /*lesson*/ ctx[11],
-    				index: /*index*/ ctx[13]
-    			},
+    			props: { lesson: /*lesson*/ ctx[12] },
     			$$inline: true
     		});
 
@@ -10718,7 +10711,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const lesson_changes = {};
-    			if (dirty & /*$APP_STATE*/ 4) lesson_changes.lesson = /*lesson*/ ctx[11];
+    			if (dirty & /*$APP_STATE*/ 4) lesson_changes.lesson = /*lesson*/ ctx[12];
     			lesson.$set(lesson_changes);
     		},
     		i: function intro(local) {
@@ -10739,7 +10732,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(100:8) {#each $APP_STATE.filteredLessons as lesson, index}",
+    		source: "(100:8) {#each $APP_STATE.filteredLessons as lesson}",
     		ctx
     	});
 
@@ -10847,7 +10840,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const col_changes = {};
 
-    			if (dirty & /*$$scope, $APP_STATE*/ 16388) {
+    			if (dirty & /*$$scope, $APP_STATE*/ 32772) {
     				col_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10914,14 +10907,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const row0_changes = {};
 
-    			if (dirty & /*$$scope, isOpen, filterOption*/ 16387) {
+    			if (dirty & /*$$scope, isOpen, filterCategory*/ 32771) {
     				row0_changes.$$scope = { dirty, ctx };
     			}
 
     			row0.$set(row0_changes);
     			const row1_changes = {};
 
-    			if (dirty & /*$$scope, $APP_STATE*/ 16388) {
+    			if (dirty & /*$$scope, $APP_STATE*/ 32772) {
     				row1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10981,7 +10974,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const container_changes = {};
 
-    			if (dirty & /*$$scope, $APP_STATE, isOpen, filterOption*/ 16391) {
+    			if (dirty & /*$$scope, $APP_STATE, isOpen, filterCategory*/ 32775) {
     				container_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11013,14 +11006,13 @@ var app = (function () {
     }
 
     function instance$o($$self, $$props, $$invalidate) {
-    	let $API_URL;
     	let $APP_STATE;
-    	validate_store(API_URL, "API_URL");
-    	component_subscribe($$self, API_URL, $$value => $$invalidate(5, $API_URL = $$value));
+    	let $API_URL;
     	validate_store(APP_STATE, "APP_STATE");
     	component_subscribe($$self, APP_STATE, $$value => $$invalidate(2, $APP_STATE = $$value));
+    	validate_store(API_URL, "API_URL");
+    	component_subscribe($$self, API_URL, $$value => $$invalidate(5, $API_URL = $$value));
     	let isOpen = false;
-    	let filterOption = "";
 
     	async function getLessons() {
     		const response = await fetch(`${$API_URL}/lessons`);
@@ -11038,22 +11030,22 @@ var app = (function () {
     			const indexOf = lessons.indexOf(item);
     			lessons.splice(indexOf, 1);
     			APP_STATE.setLessons(lessons);
+    			filterLessons();
     		}
     	}
 
     	getLessons();
 
-    	function filterLessons(category) {
-    		if (!category) {
-    			APP_STATE.setFilteredLessons($APP_STATE.lessons);
-    			$$invalidate(1, filterOption = "");
-    			return;
-    		}
+    	async function applyFilter(category = "") {
+    		await APP_STATE.setFilterCategory(category);
+    		filterLessons();
+    	}
 
-    		$$invalidate(1, filterOption = category);
-
-    		const filtered = $APP_STATE.lessons.filter(lesson => {
-    			return lesson.category == category;
+    	function filterLessons() {
+    		let filtered = $APP_STATE.lessons.filter(lesson => {
+    			return filterCategory == ""
+    			? true
+    			: lesson.category == filterCategory;
     		});
 
     		APP_STATE.setFilteredLessons(filtered);
@@ -11069,15 +11061,15 @@ var app = (function () {
     	validate_slots("LessonList", $$slots, []);
 
     	const click_handler = () => {
-    		filterLessons();
+    		applyFilter();
     	};
 
     	const click_handler_1 = () => {
-    		filterLessons(LessonCategory.general);
+    		applyFilter(LessonCategory.general);
     	};
 
     	const click_handler_2 = () => {
-    		filterLessons(LessonCategory.html);
+    		applyFilter(LessonCategory.html);
     	};
 
     	const func = () => $$invalidate(0, isOpen = !isOpen);
@@ -11096,31 +11088,41 @@ var app = (function () {
     		API_URL,
     		LessonCategory,
     		isOpen,
-    		filterOption,
     		getLessons,
     		removeLesson,
+    		applyFilter,
     		filterLessons,
-    		$API_URL,
-    		$APP_STATE
+    		filterCategory,
+    		$APP_STATE,
+    		$API_URL
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("isOpen" in $$props) $$invalidate(0, isOpen = $$props.isOpen);
-    		if ("filterOption" in $$props) $$invalidate(1, filterOption = $$props.filterOption);
+    		if ("filterCategory" in $$props) $$invalidate(1, filterCategory = $$props.filterCategory);
     	};
+
+    	let filterCategory;
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*$APP_STATE*/ 4) {
+    			 $$invalidate(1, filterCategory = $APP_STATE.filterCategory);
+    		}
+    	};
+
     	return [
     		isOpen,
-    		filterOption,
+    		filterCategory,
     		$APP_STATE,
     		removeLesson,
-    		filterLessons,
+    		applyFilter,
     		$API_URL,
     		getLessons,
+    		filterLessons,
     		click_handler,
     		click_handler_1,
     		click_handler_2,

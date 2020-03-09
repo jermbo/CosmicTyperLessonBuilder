@@ -1,7 +1,7 @@
 import {writable , readable } from "svelte/store";
 import { AppStateEnums } from "Scripts/enum";
 
-const defaultState = { state: AppStateEnums.allLessons, lessons: [], lessonIndex: 0 };
+const defaultState = { state: AppStateEnums.allLessons, lessons: [], lessonIndex: 0, filteredLessons: [] };
 
 function CreateAppState() {
   const { subscribe, update } = writable(defaultState);
@@ -20,6 +20,13 @@ function CreateAppState() {
     });
   }
 
+  function setFilteredLessons(lessons) {
+    update((obj) => {
+      obj.filteredLessons = lessons;
+      return obj;
+    });
+  }
+
   function setLessonIndex(lessons) {
     update((obj) => {
       obj.lessonIndex = lessons;
@@ -31,6 +38,7 @@ function CreateAppState() {
     subscribe,
     setState,
     setLessons,
+    setFilteredLessons,
     setLessonIndex
   };
 }

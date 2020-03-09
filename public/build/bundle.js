@@ -14238,25 +14238,17 @@ var app = (function () {
 
     // (29:2) <NavbarBrand     href={null}     on:click={() => {       updateState(AppStateEnums.allLessons);     }}>
     function create_default_slot_7$3(ctx) {
-    	let t0;
-    	let t1_value = /*$APP_STATE*/ ctx[1].state + "";
-    	let t1;
+    	let t;
 
     	const block = {
     		c: function create() {
-    			t0 = text("Typer Lesson Builder ");
-    			t1 = text(t1_value);
+    			t = text("Typer Lesson Builder");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, t1, anchor);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*$APP_STATE*/ 2 && t1_value !== (t1_value = /*$APP_STATE*/ ctx[1].state + "")) set_data_dev(t1, t1_value);
+    			insert_dev(target, t, anchor);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t);
     		}
     	};
 
@@ -14628,7 +14620,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const navbarbrand_changes = {};
 
-    			if (dirty & /*$$scope, $APP_STATE*/ 130) {
+    			if (dirty & /*$$scope*/ 128) {
     				navbarbrand_changes.$$scope = { dirty, ctx };
     			}
 

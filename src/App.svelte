@@ -22,9 +22,7 @@
 <main>
   {#if !appState || appState == AppStateEnums.allLessons}
     <LessonList />
-  {/if}
-
-  {#if appState == AppStateEnums.editLesson}
+  {:else if appState == AppStateEnums.editLesson}
     <LessonEdit />
   {/if}
 </main>

@@ -24,8 +24,6 @@
     const data = await response.json();
     APP_STATE.setLessons(data);
     APP_STATE.setFilteredLessons(data);
-    console.log($APP_STATE.lessons);
-    console.log($APP_STATE.filteredLessons);
   }
 
   async function removeLesson({ detail }) {

@@ -14,9 +14,9 @@
   // Helpers and Enums
   import { AppStateEnums } from "Scripts/enum.js";
 
-  function editLesson(index) {
+  function editLesson(id) {
     APP_STATE.setState(AppStateEnums.editLesson);
-    APP_STATE.setLessonIndex(index);
+    APP_STATE.setCurrentLessonId(id);
   }
 
   function removeLesson(id) {
@@ -35,12 +35,12 @@
 <div
   class="lesson bg-light p-3 d-flex justify-content-center align-items-center
   border-bottom">
-  <p class="m-0" on:click={() => editLesson(index)}>{lesson.title}</p>
+  <p class="m-0" on:click={() => editLesson(lesson.id)}>{lesson.title}</p>
   <div class="actions d-flex ml-auto">
     <button
       type="button"
       class="btn btn-primary btn-sm mr-2"
-      on:click={() => editLesson(index)}>
+      on:click={() => editLesson(lesson.id)}>
       Edit
     </button>
     <button

@@ -30,7 +30,10 @@
     steps: [],
   };
 
-  $: lesson = $APP_STATE.lessons[$APP_STATE.lessonIndex] || sampleLesson;
+  $: lesson =
+    $APP_STATE.lessons.filter(
+      (lesson) => lesson.id == $APP_STATE.currentLessonId,
+    )[0] || sampleLesson;
 
   function clearLessons() {
     lesson.steps = [];
@@ -62,7 +65,7 @@
       .then((resp) => resp.json())
       .then((data) => {
         APP_STATE.setState(AppStateEnums.allLessons);
-        APP_STATE.setLessonIndex(-1);
+        APP_STATE.setCurrentLessonId(-1);
       })
       .catch((err) => {
         console.log(err);
@@ -70,7 +73,10 @@
   }
 
   function updateLesson() {
-    const id = $APP_STATE.lessons[$APP_STATE.lessonIndex].id;
+    const lesson = $APP_STATE.lessons.filter(
+      (lesson) => lesson.id == $APP_STATE.currentLessonId,
+    )[0];
+    const id = lesson.id;
     fetch(`${$API_URL}/lessons/${id}`, {
       method: "PUT",
       headers: {
@@ -81,7 +87,7 @@
       .then((resp) => resp.json())
       .then((data) => {
         APP_STATE.setState(AppStateEnums.allLessons);
-        APP_STATE.setLessonIndex(-1);
+        APP_STATE.setCurrentLessonId(-1);
       })
       .catch((err) => {
         console.log(err);
@@ -94,10 +100,10 @@
     <Col>
       <header class="my-4 d-flex justify-content-between">
         <h3>
-          Edit
+          {$APP_STATE.currentLessonId < 0 ? 'Create Lesson' : 'Edit Lesson'} :
           <small>{lesson.title}</small>
         </h3>
-        {#if $APP_STATE.lessonIndex < 0}
+        {#if $APP_STATE.currentLessonId < 0}
           <Button outline color="primary" on:click={saveLesson}>
             Save Lesson
           </Button>

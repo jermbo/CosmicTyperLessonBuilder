@@ -31,7 +31,7 @@
     on:click={() => {
       updateState(AppStateEnums.allLessons);
     }}>
-    Typer Lesson Builder
+    Typer Lesson Builder {$APP_STATE.state}
   </NavbarBrand>
   <NavbarToggler on:click={() => (isOpen = !isOpen)} />
   <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
@@ -50,7 +50,7 @@
           href={null}
           on:click={() => {
             updateState(AppStateEnums.editLesson);
-            APP_STATE.setLessonIndex(-1);
+            APP_STATE.setCurrentLessonId(-1);
           }}>
           Add Lesson
         </NavLink>

@@ -18,6 +18,7 @@
   import { APP_STATE, API_URL } from "Stores/AppState.js";
   // Helpers and Enums
   import { AppStateEnums } from "Scripts/enum.js";
+  import { UID } from "Scripts/utils.js";
 
   const CATEGORY_TYPES = ["html-css", "general"];
   const DIFFICULTY_TYPES = ["easy", "medium", "hard"];
@@ -60,7 +61,7 @@
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(lesson),
+      body: JSON.stringify({ ...lesson, id: UID() }),
     })
       .then((resp) => resp.json())
       .then((data) => {

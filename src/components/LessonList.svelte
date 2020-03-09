@@ -24,6 +24,7 @@
     const data = await response.json();
     APP_STATE.setLessons(data);
     APP_STATE.setFilteredLessons(data);
+    filterLessons();
   }
 
   async function removeLesson({ detail }) {

@@ -10120,7 +10120,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (65:10) <DropdownToggle caret>
+    // (66:10) <DropdownToggle caret>
     function create_default_slot_10(ctx) {
     	let t_value = (/*filterCategory*/ ctx[1]
     	? `Filtered : ${/*filterCategory*/ ctx[1]}`
@@ -10149,14 +10149,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(65:10) <DropdownToggle caret>",
+    		source: "(66:10) <DropdownToggle caret>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>
+    // (70:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>
     function create_default_slot_9(ctx) {
     	let t;
 
@@ -10176,14 +10176,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(69:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>",
+    		source: "(70:12) <DropdownItem               on:click={() => {                 applyFilter();               }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>
+    // (76:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>
     function create_default_slot_8(ctx) {
     	let t;
 
@@ -10203,14 +10203,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(75:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>",
+    		source: "(76:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.general);               }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>
+    // (82:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>
     function create_default_slot_7(ctx) {
     	let t;
 
@@ -10230,14 +10230,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(81:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>",
+    		source: "(82:12) <DropdownItem               on:click={() => {                 applyFilter(LessonCategory.html);               }}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:10) <DropdownMenu>
+    // (69:10) <DropdownMenu>
     function create_default_slot_6(ctx) {
     	let t0;
     	let t1;
@@ -10338,14 +10338,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(68:10) <DropdownMenu>",
+    		source: "(69:10) <DropdownMenu>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:8) <Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>
+    // (65:8) <Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>
     function create_default_slot_5(ctx) {
     	let t;
     	let current;
@@ -10417,14 +10417,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(64:8) <Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>",
+    		source: "(65:8) <Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:4) <Col>
+    // (61:4) <Col>
     function create_default_slot_4(ctx) {
     	let header;
     	let h3;
@@ -10448,9 +10448,9 @@ var app = (function () {
     			h3.textContent = "Lesson List";
     			t1 = space();
     			create_component(dropdown.$$.fragment);
-    			add_location(h3, file$o, 61, 8, 1526);
+    			add_location(h3, file$o, 62, 8, 1547);
     			attr_dev(header, "class", "my-4 d-flex justify-content-between");
-    			add_location(header, file$o, 60, 6, 1465);
+    			add_location(header, file$o, 61, 6, 1486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -10489,14 +10489,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(60:4) <Col>",
+    		source: "(61:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:2) <Row>
+    // (60:2) <Row>
     function create_default_slot_3(ctx) {
     	let current;
 
@@ -10543,14 +10543,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(59:2) <Row>",
+    		source: "(60:2) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:6) {:else}
+    // (99:6) {:else}
     function create_else_block$6(ctx) {
     	let p;
     	let t1;
@@ -10579,7 +10579,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty();
-    			add_location(p, file$o, 98, 8, 2496);
+    			add_location(p, file$o, 99, 8, 2517);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10651,14 +10651,14 @@ var app = (function () {
     		block,
     		id: create_else_block$6.name,
     		type: "else",
-    		source: "(98:6) {:else}",
+    		source: "(99:6) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:6) {#if !$APP_STATE.lessons.length}
+    // (97:6) {#if !$APP_STATE.lessons.length}
     function create_if_block$8(ctx) {
     	let h4;
 
@@ -10666,7 +10666,7 @@ var app = (function () {
     		c: function create() {
     			h4 = element("h4");
     			h4.textContent = "Getting Lessons";
-    			add_location(h4, file$o, 96, 8, 2449);
+    			add_location(h4, file$o, 97, 8, 2470);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -10683,14 +10683,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(96:6) {#if !$APP_STATE.lessons.length}",
+    		source: "(97:6) {#if !$APP_STATE.lessons.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:8) {#each $APP_STATE.filteredLessons as lesson}
+    // (101:8) {#each $APP_STATE.filteredLessons as lesson}
     function create_each_block(ctx) {
     	let current;
 
@@ -10732,14 +10732,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(100:8) {#each $APP_STATE.filteredLessons as lesson}",
+    		source: "(101:8) {#each $APP_STATE.filteredLessons as lesson}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:4) <Col>
+    // (96:4) <Col>
     function create_default_slot_2(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -10810,14 +10810,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(95:4) <Col>",
+    		source: "(96:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:2) <Row>
+    // (95:2) <Row>
     function create_default_slot_1(ctx) {
     	let current;
 
@@ -10864,14 +10864,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(94:2) <Row>",
+    		source: "(95:2) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:0) <Container>
+    // (59:0) <Container>
     function create_default_slot$2(ctx) {
     	let t;
     	let current;
@@ -10942,7 +10942,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(58:0) <Container>",
+    		source: "(59:0) <Container>",
     		ctx
     	});
 
@@ -11019,6 +11019,7 @@ var app = (function () {
     		const data = await response.json();
     		APP_STATE.setLessons(data);
     		APP_STATE.setFilteredLessons(data);
+    		filterLessons();
     	}
 
     	async function removeLesson({ detail }) {
@@ -12415,10 +12416,14 @@ var app = (function () {
     	}
     }
 
+    const UID = () =>
+      `_${Math.random()
+    .toString(36)
+    .substr(2, 9)}`;
+
     /* src/components/LessonEdit.svelte generated by Svelte v3.19.2 */
 
     const { console: console_1$1 } = globals;
-
     const file$q = "src/components/LessonEdit.svelte";
 
     function get_each_context$2(ctx, list, i) {
@@ -12441,7 +12446,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (110:8) {:else}
+    // (111:8) {:else}
     function create_else_block$7(ctx) {
     	let current;
 
@@ -12492,14 +12497,14 @@ var app = (function () {
     		block,
     		id: create_else_block$7.name,
     		type: "else",
-    		source: "(110:8) {:else}",
+    		source: "(111:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:8) {#if $APP_STATE.currentLessonId < 0}
+    // (107:8) {#if $APP_STATE.currentLessonId < 0}
     function create_if_block_3$2(ctx) {
     	let current;
 
@@ -12550,14 +12555,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(106:8) {#if $APP_STATE.currentLessonId < 0}",
+    		source: "(107:8) {#if $APP_STATE.currentLessonId < 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:10) <Button outline color="primary" on:click={updateLesson}>
+    // (112:10) <Button outline color="primary" on:click={updateLesson}>
     function create_default_slot_14(ctx) {
     	let t;
 
@@ -12577,14 +12582,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(111:10) <Button outline color=\\\"primary\\\" on:click={updateLesson}>",
+    		source: "(112:10) <Button outline color=\\\"primary\\\" on:click={updateLesson}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (107:10) <Button outline color="primary" on:click={saveLesson}>
+    // (108:10) <Button outline color="primary" on:click={saveLesson}>
     function create_default_slot_13(ctx) {
     	let t;
 
@@ -12604,14 +12609,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13.name,
     		type: "slot",
-    		source: "(107:10) <Button outline color=\\\"primary\\\" on:click={saveLesson}>",
+    		source: "(108:10) <Button outline color=\\\"primary\\\" on:click={saveLesson}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (100:4) <Col>
+    // (101:4) <Col>
     function create_default_slot_12(ctx) {
     	let header;
     	let h3;
@@ -12650,10 +12655,10 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			if_block.c();
-    			add_location(small, file$q, 103, 10, 2309);
-    			add_location(h3, file$q, 101, 8, 2215);
+    			add_location(small, file$q, 104, 10, 2369);
+    			add_location(h3, file$q, 102, 8, 2275);
     			attr_dev(header, "class", "my-4 d-flex justify-content-between");
-    			add_location(header, file$q, 100, 6, 2154);
+    			add_location(header, file$q, 101, 6, 2214);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -12715,14 +12720,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(100:4) <Col>",
+    		source: "(101:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (99:2) <Row>
+    // (100:2) <Row>
     function create_default_slot_11(ctx) {
     	let current;
 
@@ -12769,14 +12774,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(99:2) <Row>",
+    		source: "(100:2) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:8) <Label for="title">
+    // (122:8) <Label for="title">
     function create_default_slot_10$2(ctx) {
     	let t;
 
@@ -12796,14 +12801,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$2.name,
     		type: "slot",
-    		source: "(121:8) <Label for=\\\"title\\\">",
+    		source: "(122:8) <Label for=\\\"title\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:6) <FormGroup>
+    // (121:6) <FormGroup>
     function create_default_slot_9$2(ctx) {
     	let t;
     	let updating_value;
@@ -12887,14 +12892,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$2.name,
     		type: "slot",
-    		source: "(120:6) <FormGroup>",
+    		source: "(121:6) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (130:8) <Label for="category">
+    // (131:8) <Label for="category">
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -12914,14 +12919,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(130:8) <Label for=\\\"category\\\">",
+    		source: "(131:8) <Label for=\\\"category\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (138:10) {#each CATEGORY_TYPES as type}
+    // (139:10) {#each CATEGORY_TYPES as type}
     function create_each_block_2(ctx) {
     	let option;
     	let t_value = /*type*/ ctx[19] + "";
@@ -12934,7 +12939,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[19];
     			option.value = option.__value;
-    			add_location(option, file$q, 138, 12, 3275);
+    			add_location(option, file$q, 139, 12, 3335);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -12950,14 +12955,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(138:10) {#each CATEGORY_TYPES as type}",
+    		source: "(139:10) {#each CATEGORY_TYPES as type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (129:6) <FormGroup>
+    // (130:6) <FormGroup>
     function create_default_slot_7$2(ctx) {
     	let t0;
     	let select;
@@ -12996,12 +13001,12 @@ var app = (function () {
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$q, 136, 10, 3178);
+    			add_location(option, file$q, 137, 10, 3238);
     			attr_dev(select, "name", "category");
     			attr_dev(select, "id", "category");
     			attr_dev(select, "class", "form-control");
     			if (/*lesson*/ ctx[0].category === void 0) add_render_callback(() => /*select_change_handler*/ ctx[12].call(select));
-    			add_location(select, file$q, 130, 8, 3004);
+    			add_location(select, file$q, 131, 8, 3064);
     		},
     		m: function mount(target, anchor) {
     			mount_component(label, target, anchor);
@@ -13080,14 +13085,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(129:6) <FormGroup>",
+    		source: "(130:6) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:8) <Label for="difficulty">
+    // (146:8) <Label for="difficulty">
     function create_default_slot_6$2(ctx) {
     	let t;
 
@@ -13107,14 +13112,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(145:8) <Label for=\\\"difficulty\\\">",
+    		source: "(146:8) <Label for=\\\"difficulty\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (152:10) {#each DIFFICULTY_TYPES as type}
+    // (153:10) {#each DIFFICULTY_TYPES as type}
     function create_each_block_1(ctx) {
     	let option;
     	let t_value = /*type*/ ctx[19] + "";
@@ -13127,7 +13132,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[19];
     			option.value = option.__value;
-    			add_location(option, file$q, 152, 12, 3691);
+    			add_location(option, file$q, 153, 12, 3751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -13143,14 +13148,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(152:10) {#each DIFFICULTY_TYPES as type}",
+    		source: "(153:10) {#each DIFFICULTY_TYPES as type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:6) <FormGroup>
+    // (145:6) <FormGroup>
     function create_default_slot_5$2(ctx) {
     	let t0;
     	let select;
@@ -13189,12 +13194,12 @@ var app = (function () {
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$q, 150, 10, 3590);
+    			add_location(option, file$q, 151, 10, 3650);
     			attr_dev(select, "name", "difficulty");
     			attr_dev(select, "id", "difficulty");
     			attr_dev(select, "class", "form-control");
     			if (/*lesson*/ ctx[0].difficulty === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[13].call(select));
-    			add_location(select, file$q, 145, 8, 3445);
+    			add_location(select, file$q, 146, 8, 3505);
     		},
     		m: function mount(target, anchor) {
     			mount_component(label, target, anchor);
@@ -13269,14 +13274,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(144:6) <FormGroup>",
+    		source: "(145:6) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (158:6) {#if lesson.category == 'general'}
+    // (159:6) {#if lesson.category == 'general'}
     function create_if_block_2$3(ctx) {
     	let updating_steps;
     	let current;
@@ -13335,14 +13340,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(158:6) {#if lesson.category == 'general'}",
+    		source: "(159:6) {#if lesson.category == 'general'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (162:6) {#if lesson.category == 'html-css'}
+    // (163:6) {#if lesson.category == 'html-css'}
     function create_if_block$9(ctx) {
     	let t;
     	let if_block_anchor;
@@ -13428,14 +13433,14 @@ var app = (function () {
     		block,
     		id: create_if_block$9.name,
     		type: "if",
-    		source: "(162:6) {#if lesson.category == 'html-css'}",
+    		source: "(163:6) {#if lesson.category == 'html-css'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:8) <Button class="mb-2" outline color="secondary" on:click={addStep}>
+    // (164:8) <Button class="mb-2" outline color="secondary" on:click={addStep}>
     function create_default_slot_4$2(ctx) {
     	let t;
 
@@ -13455,14 +13460,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(163:8) <Button class=\\\"mb-2\\\" outline color=\\\"secondary\\\" on:click={addStep}>",
+    		source: "(164:8) <Button class=\\\"mb-2\\\" outline color=\\\"secondary\\\" on:click={addStep}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (166:8) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}
+    // (167:8) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}
     function create_if_block_1$4(ctx) {
     	let each_1_anchor;
     	let current;
@@ -13551,14 +13556,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(166:8) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}",
+    		source: "(167:8) {#if lesson.steps.length && typeof lesson.steps[0] == 'object'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (167:10) {#each lesson.steps as step, index}
+    // (168:10) {#each lesson.steps as step, index}
     function create_each_block$2(ctx) {
     	let updating_step;
     	let current;
@@ -13615,14 +13620,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(167:10) {#each lesson.steps as step, index}",
+    		source: "(168:10) {#each lesson.steps as step, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (119:4) <Col md="7">
+    // (120:4) <Col md="7">
     function create_default_slot_3$2(ctx) {
     	let t0;
     	let t1;
@@ -13782,14 +13787,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(119:4) <Col md=\\\"7\\\">",
+    		source: "(120:4) <Col md=\\\"7\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (174:4) <Col md="5">
+    // (175:4) <Col md="5">
     function create_default_slot_2$2(ctx) {
     	let h4;
     	let t1;
@@ -13804,8 +13809,8 @@ var app = (function () {
     			t1 = space();
     			pre = element("pre");
     			t2 = text(t2_value);
-    			add_location(h4, file$q, 174, 6, 4319);
-    			add_location(pre, file$q, 175, 6, 4346);
+    			add_location(h4, file$q, 175, 6, 4379);
+    			add_location(pre, file$q, 176, 6, 4406);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -13827,14 +13832,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(174:4) <Col md=\\\"5\\\">",
+    		source: "(175:4) <Col md=\\\"5\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (118:2) <Row>
+    // (119:2) <Row>
     function create_default_slot_1$3(ctx) {
     	let t;
     	let current;
@@ -13907,14 +13912,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(118:2) <Row>",
+    		source: "(119:2) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:0) <Container>
+    // (99:0) <Container>
     function create_default_slot$5(ctx) {
     	let t;
     	let current;
@@ -13985,7 +13990,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$5.name,
     		type: "slot",
-    		source: "(98:0) <Container>",
+    		source: "(99:0) <Container>",
     		ctx
     	});
 
@@ -14090,7 +14095,7 @@ var app = (function () {
     		fetch(`${$API_URL}/lessons`, {
     			method: "POST",
     			headers: { "Content-Type": "application/json" },
-    			body: JSON.stringify(lesson)
+    			body: JSON.stringify({ ...lesson, id: UID() })
     		}).then(resp => resp.json()).then(data => {
     			APP_STATE.setState(AppStateEnums.allLessons);
     			APP_STATE.setCurrentLessonId(-1);
@@ -14165,6 +14170,7 @@ var app = (function () {
     		APP_STATE,
     		API_URL,
     		AppStateEnums,
+    		UID,
     		CATEGORY_TYPES,
     		DIFFICULTY_TYPES,
     		sampleLesson,

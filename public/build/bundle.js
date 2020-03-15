@@ -12655,10 +12655,10 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			if_block.c();
-    			add_location(small, file$q, 104, 10, 2369);
-    			add_location(h3, file$q, 102, 8, 2275);
+    			add_location(small, file$q, 104, 10, 2375);
+    			add_location(h3, file$q, 102, 8, 2281);
     			attr_dev(header, "class", "my-4 d-flex justify-content-between");
-    			add_location(header, file$q, 101, 6, 2214);
+    			add_location(header, file$q, 101, 6, 2220);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, header, anchor);
@@ -12939,7 +12939,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[19];
     			option.value = option.__value;
-    			add_location(option, file$q, 139, 12, 3335);
+    			add_location(option, file$q, 139, 12, 3341);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -13001,12 +13001,12 @@ var app = (function () {
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$q, 137, 10, 3238);
+    			add_location(option, file$q, 137, 10, 3244);
     			attr_dev(select, "name", "category");
     			attr_dev(select, "id", "category");
     			attr_dev(select, "class", "form-control");
     			if (/*lesson*/ ctx[0].category === void 0) add_render_callback(() => /*select_change_handler*/ ctx[12].call(select));
-    			add_location(select, file$q, 131, 8, 3064);
+    			add_location(select, file$q, 131, 8, 3070);
     		},
     		m: function mount(target, anchor) {
     			mount_component(label, target, anchor);
@@ -13132,7 +13132,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[19];
     			option.value = option.__value;
-    			add_location(option, file$q, 153, 12, 3751);
+    			add_location(option, file$q, 153, 12, 3757);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -13194,12 +13194,12 @@ var app = (function () {
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$q, 151, 10, 3650);
+    			add_location(option, file$q, 151, 10, 3656);
     			attr_dev(select, "name", "difficulty");
     			attr_dev(select, "id", "difficulty");
     			attr_dev(select, "class", "form-control");
     			if (/*lesson*/ ctx[0].difficulty === void 0) add_render_callback(() => /*select_change_handler_1*/ ctx[13].call(select));
-    			add_location(select, file$q, 146, 8, 3505);
+    			add_location(select, file$q, 146, 8, 3511);
     		},
     		m: function mount(target, anchor) {
     			mount_component(label, target, anchor);
@@ -13809,8 +13809,8 @@ var app = (function () {
     			t1 = space();
     			pre = element("pre");
     			t2 = text(t2_value);
-    			add_location(h4, file$q, 175, 6, 4379);
-    			add_location(pre, file$q, 176, 6, 4406);
+    			add_location(h4, file$q, 175, 6, 4385);
+    			add_location(pre, file$q, 176, 6, 4412);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -14086,8 +14086,8 @@ var app = (function () {
     		$$invalidate(0, lesson.steps = [...lesson.steps, newStep], lesson);
     	}
 
-    	function removeStep(index) {
-    		const remove = lesson.steps.splice(index, 1);
+    	function removeStep({ detail }) {
+    		const remove = lesson.steps.splice(detail, 1);
     		($$invalidate(0, lesson), $$invalidate(1, $APP_STATE));
     	}
 

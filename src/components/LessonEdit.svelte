@@ -50,8 +50,8 @@
     lesson.steps = [...lesson.steps, newStep];
   }
 
-  function removeStep(index) {
-    const remove = lesson.steps.splice(index, 1);
+  function removeStep({ detail }) {
+    const remove = lesson.steps.splice(detail, 1);
     lesson.steps = lesson.steps;
   }
 

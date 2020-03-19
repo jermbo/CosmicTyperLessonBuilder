@@ -75,11 +75,7 @@
 <Container>
   <Row>
     <Col>
-      <PageHeader {title}>
-        <Button color="success" size="sm" on:click={enableAddModule}>
-          Add New Lesson
-        </Button>
-      </PageHeader>
+      <PageHeader {title} on:newLesson={enableAddModule} />
     </Col>
   </Row>
   {#if $typingLessons}

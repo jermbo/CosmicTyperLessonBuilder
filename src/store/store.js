@@ -5,13 +5,13 @@ const state = {
 };
 
 const getWebLessons = (lessons) => {
-  state.webLessons.update((old) => {
-    return lessons;
-  });
+  state.webLessons.update((old) => lessons);
 };
 
-const deleteWebLesson = (hero) => {
-  state.heroes.update((old) => [...old.filter((h) => h.id !== hero.id)]);
+const deleteWebLesson = (lesson) => {
+  console.log(lesson.id);
+  state.webLessons.update((old) => [...old.filter((l) => l.id !== lesson.id)]);
+  console.log(state.webLessons);
 };
 
 export { state, getWebLessons, deleteWebLesson };

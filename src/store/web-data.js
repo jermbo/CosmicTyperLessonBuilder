@@ -14,11 +14,11 @@ export async function getWebLessonsAction() {
   }
 }
 
-export async function deleteWebLessonAction(hero) {
+export async function deleteWebLessonAction(lesson) {
   try {
-    const response = await axios.delete(`${API}/webLessons/${hero.id}`);
+    const response = await axios.delete(`${API}/webLessons/${lesson.id}`);
     parseItem(response, 200);
-    store.deleteWebLesson(hero);
+    store.deleteWebLesson(lesson);
     return null;
   } catch (error) {
     console.error(error);

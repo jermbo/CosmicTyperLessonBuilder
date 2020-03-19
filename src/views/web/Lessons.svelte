@@ -13,7 +13,11 @@
   import LessonList from "./LessonList.svelte";
   import { Modal } from "../../components";
 
-  import { state, getWebLessonsAction } from "../../store";
+  import {
+    state,
+    getWebLessonsAction,
+    deleteWebLessonAction,
+  } from "../../store";
 
   const { webLessons } = state;
 
@@ -30,6 +34,7 @@
   }
 
   function askToDelete({ detail: lesson }) {
+    console.log(lesson);
     lessonToDelete = lesson;
     showModal = true;
     if (lessonToDelete.title) {
@@ -40,10 +45,14 @@
   async function deleteLesson() {
     closeModal();
     if (lessonToDelete) {
-      console.log(`You said you want to delete ${lessonToDelete.name}`);
-      await deleteLessonAction(lessonToDelete);
+      console.log(`You said you want to delete ${lessonToDelete.title}`);
+      await deleteWebLessonAction(lessonToDelete);
     }
     clear();
+  }
+
+  function clear() {
+    selected = null;
   }
 
   function select() {}

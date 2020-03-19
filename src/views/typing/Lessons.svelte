@@ -12,7 +12,7 @@
   } from "sveltestrap";
   import LessonList from "./LessonList.svelte";
   import LessonDetail from "./LessonDetail.svelte";
-  import { Modal } from "../../components";
+  import { Modal, PageHeader } from "../../components";
 
   import {
     state,
@@ -84,10 +84,11 @@
 <Container>
   <Row>
     <Col>
-      <h2>Typing Lessons</h2>
-      <Button color="success" size="sm" on:click={enableAddModule}>
-        Add New Lesson
-      </Button>
+      <PageHeader {title}>
+        <Button color="success" size="sm" on:click={enableAddModule}>
+          Add New Lesson
+        </Button>
+      </PageHeader>
     </Col>
   </Row>
   {#if $typingLessons}

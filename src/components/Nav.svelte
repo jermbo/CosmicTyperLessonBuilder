@@ -15,8 +15,10 @@
 
   const { activeRoute } = getContext(ROUTER);
 
-  function isActive({ location, href, isPartiallyCurrent, isCurrent }) {
-    return href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
+  function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
+    const item = href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
+    console.log(item);
+    return item;
   }
 
   let isOpen = false;
@@ -34,9 +36,16 @@
   <NavbarToggler on:click={() => (isOpen = !isOpen)} />
   <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
     <Nav class="" navbar>
-      <!-- <NavItem>
-        <NavLink active={() => isActive()} href="/lessons">All Lessons</NavLink>
-      </NavItem> -->
+      <NavItem
+        active={() => {
+          console.log('what');
+          getProps();
+        }}>
+        <Link to="/web-lessons">Web Lessons</Link>
+      </NavItem>
+      <NavItem>
+        <Link to="/typing-lessons">Typing Lessons</Link>
+      </NavItem>
     </Nav>
   </Collapse>
 </Navbar>

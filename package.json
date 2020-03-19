@@ -5,7 +5,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --cors --port 10777 --single",
-    "backend": "json-server --watch db.json --port 10888 --middlewares ./node_modules/json-server-reset",
+    "backend": "json-server --watch db.json --routes routes.json --port 10888 --middlewares ./node_modules/json-server-reset",
     "quick": "concurrently \"npm run backend\" \"npm run dev\""
   },
   "devDependencies": {

@@ -1,7 +1,8 @@
 <script>
   import "./styles.scss";
   import { Router, Link, Route } from "svelte-routing";
-  import Lessons from "./views/lessons/Lessons.svelte";
+  import WebLessons from "./views/web/Lessons.svelte";
+  import TypingLessons from "./views/typing/Lessons.svelte";
 
   import { Nav, PageNotFound, Redirect } from "./components";
 
@@ -14,9 +15,10 @@
     <main class="column">
       <div>
         <Route path="/">
-          <Redirect path="/lessons" />
+          <Redirect path="/web-lessons" />
         </Route>
-        <Route path="/lessons" component={Lessons} />
+        <Route path="/web-lessons" component={WebLessons} />
+        <Route path="/typing-lessons" component={TypingLessons} />
         <Route path="**" component={PageNotFound} />
       </div>
     </main>

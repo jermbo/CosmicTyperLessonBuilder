@@ -23,7 +23,7 @@ export default {
       process: JSON.stringify({
         env: {
           isProd: production,
-          SVELTE_APP_API: "http://localhost:10627/api",
+          SVELTE_APP_API: "http://localhost:10888/api",
         },
       }),
     }),

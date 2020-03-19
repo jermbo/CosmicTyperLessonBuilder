@@ -11,12 +11,15 @@
     Button,
   } from "sveltestrap";
   import LessonList from "./LessonList.svelte";
+  import LessonDetail from "./LessonDetail.svelte";
   import { Modal } from "../../components";
 
   import {
     state,
     getWebLessonsAction,
     deleteWebLessonAction,
+    updateWebLessonAction,
+    addWebLessonAction,
   } from "../../store";
 
   const { webLessons } = state;
@@ -31,6 +34,10 @@
 
   async function getWebLessons() {
     await getWebLessonsAction();
+  }
+
+  function enableAddModule() {
+    selected = {};
   }
 
   function askToDelete({ detail: lesson }) {
@@ -55,22 +62,46 @@
     selected = null;
   }
 
-  function select() {}
+  function select({ detail: lesson }) {
+    selected = lesson;
+    console.log(`You selected ${lesson.title}`);
+  }
 
   function closeModal() {
     showModal = false;
   }
+
+  async function save({ detail: lesson }) {
+    let theLesson;
+    if (lesson.id) {
+      theLesson = await updateWebLessonAction(lesson);
+    } else {
+      theLesson = await addWebLessonAction(lesson);
+    }
+  }
 </script>
 
 <Container>
-  <h2>Web Lessons</h2>
+  <Row>
+    <Col>
+      <h2>Web Lessons</h2>
+      <Button color="success" size="sm" on:click={enableAddModule}>
+        Add New Lesson
+      </Button>
+    </Col>
+  </Row>
   {#if $webLessons}
     <Row>
       <Col>
-        <LessonList
-          lessons={$webLessons}
-          on:deleted={askToDelete}
-          on:selected={select} />
+        {#if !selected}
+          <LessonList
+            lessons={$webLessons}
+            on:deleted={askToDelete}
+            on:selected={select} />
+        {:else}
+          <LessonDetail lesson={selected} on:unselect={clear} on:save={save} />
+        {/if}
+
       </Col>
     </Row>
   {/if}

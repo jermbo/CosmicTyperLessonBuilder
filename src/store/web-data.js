@@ -24,3 +24,24 @@ export async function deleteWebLessonAction(lesson) {
     console.error(error);
   }
 }
+
+export async function updateWebLessonAction(lesson) {
+  try {
+    const response = await axios.put(`${API}/webLessons/${lesson.id}`, lesson);
+    const updatedLesson = parseItem(response, 200);
+    store.updateWebLesson(updatedLesson);
+    return updatedLesson;
+  } catch (error) {
+    console.error(error);
+  }
+}
+export async function addWebLessonAction(lesson) {
+  try {
+    const response = await axios.post(`${API}/webLessons/`, lesson);
+    const addedLesson = parseItem(response, 201);
+    store.addWebLesson(addedLesson);
+    return addedLesson;
+  } catch (error) {
+    console.error(error);
+  }
+}

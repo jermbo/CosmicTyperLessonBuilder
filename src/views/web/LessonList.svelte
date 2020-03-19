@@ -16,6 +16,10 @@
   function deleteLesson(lesson) {
     dispatch("deleted", lesson);
   }
+
+  function selectLesson(lesson) {
+    dispatch("selected", lesson);
+  }
 </script>
 
 {#each lessons as { id, title, difficulty }, i (id)}
@@ -28,7 +32,13 @@
       <small>{difficulty}</small>
     </p>
     <div class="actions d-flex ml-auto">
-      <Button color="primary" size="sm" class="mr-2">Edit</Button>
+      <Button
+        color="primary"
+        size="sm"
+        class="mr-2"
+        on:click={selectLesson(lessons[i])}>
+        Edit
+      </Button>
       <Button
         color="danger"
         size="sm"

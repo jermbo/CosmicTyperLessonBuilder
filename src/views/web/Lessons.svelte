@@ -1,15 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import {
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Container,
-    Row,
-    Col,
-    Button,
-  } from "sveltestrap";
+  import { Container, Row, Col, Button } from "sveltestrap";
   import LessonList from "./LessonList.svelte";
   import LessonDetail from "./LessonDetail.svelte";
   import { Modal, PageHeader } from "../../components";

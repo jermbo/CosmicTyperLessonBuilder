@@ -1,16 +1,7 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte";
 
-  import {
-    Container,
-    Row,
-    Col,
-    Button,
-    Form,
-    FormGroup,
-    Input,
-    Label,
-  } from "sveltestrap";
+  import { Row, Col, Button, Form, FormGroup, Input, Label } from "sveltestrap";
 
   import HTMLStep from "./HTMLStep.svelte";
 

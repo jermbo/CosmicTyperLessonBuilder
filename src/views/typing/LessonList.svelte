@@ -1,15 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import {
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Container,
-    Row,
-    Col,
-    Button,
-  } from "sveltestrap";
+  import { Button } from "sveltestrap";
   const dispatch = createEventDispatcher();
   export let lessons = [];
 

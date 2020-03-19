@@ -9,11 +9,17 @@
     NavLink,
   } from "sveltestrap";
 
-  // Stores
-  import { APP_STATE } from "Stores/AppState.js";
+  import { Router, Link, Route } from "svelte-routing";
+  import { getContext } from "svelte";
+  import { ROUTER } from "svelte-routing/src/contexts";
 
-  // Helpers and Enums
-  import { AppStateEnums } from "Scripts/enum.js";
+  const { activeRoute } = getContext(ROUTER);
+
+  function getProps({ location, href, isPartiallyCurrent, isCurrent }) {
+    const item = href === "/" ? isCurrent : isPartiallyCurrent || isCurrent;
+    console.log(item);
+    return item;
+  }
 
   let isOpen = false;
   function handleUpdate(event) {
@@ -26,34 +32,19 @@
 </script>
 
 <Navbar color="light" light expand="md">
-  <NavbarBrand
-    href={null}
-    on:click={() => {
-      updateState(AppStateEnums.allLessons);
-    }}>
-    Typer Lesson Builder
-  </NavbarBrand>
+  <NavbarBrand href="/lessons">Typer Lesson Builder</NavbarBrand>
   <NavbarToggler on:click={() => (isOpen = !isOpen)} />
   <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
     <Nav class="" navbar>
-      <NavItem active={$APP_STATE.state == AppStateEnums.allLessons}>
-        <NavLink
-          href={null}
-          on:click={() => {
-            updateState(AppStateEnums.allLessons);
-          }}>
-          All Lessons
-        </NavLink>
+      <NavItem
+        active={() => {
+          console.log('what');
+          getProps();
+        }}>
+        <Link to="/web-lessons">Web Lessons</Link>
       </NavItem>
-      <NavItem active={$APP_STATE.state == AppStateEnums.editLesson}>
-        <NavLink
-          href={null}
-          on:click={() => {
-            updateState(AppStateEnums.editLesson);
-            APP_STATE.setCurrentLessonId(-1);
-          }}>
-          Add Lesson
-        </NavLink>
+      <NavItem>
+        <Link to="/typing-lessons">Typing Lessons</Link>
       </NavItem>
     </Nav>
   </Collapse>

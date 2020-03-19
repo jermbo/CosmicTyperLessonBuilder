@@ -1,28 +1,26 @@
 <script>
-  // Components
-  import LessonList from "Comps/LessonList.svelte";
-  import LessonEdit from "Comps/LessonEdit.svelte";
-  import Nav from "Comps/Nav.svelte";
+  import "./styles.scss";
+  import { Router, Link, Route } from "svelte-routing";
+  import WebLessons from "./views/web/Lessons.svelte";
+  import TypingLessons from "./views/typing/Lessons.svelte";
 
-  // Stores
-  import { APP_STATE } from "Stores/AppState.js";
+  import { Nav, PageNotFound, Redirect } from "./components";
 
-  // Helpers
-  import { AppStateEnums } from "Scripts/enum.js";
-
-  $: appState = $APP_STATE.state;
+  export let url = "";
 </script>
 
-<style lang="scss" global>
-  @import "styles/styles.scss";
-</style>
-
-<Nav />
-
-<main>
-  {#if !appState || appState == AppStateEnums.allLessons}
-    <LessonList />
-  {:else if appState == AppStateEnums.editLesson}
-    <LessonEdit />
-  {/if}
-</main>
+<div class="section columns">
+  <Router {url}>
+    <Nav />
+    <main class="column">
+      <div>
+        <Route path="/">
+          <Redirect path="/web-lessons" />
+        </Route>
+        <Route path="/web-lessons" component={WebLessons} />
+        <Route path="/typing-lessons" component={TypingLessons} />
+        <Route path="**" component={PageNotFound} />
+      </div>
+    </main>
+  </Router>
+</div>

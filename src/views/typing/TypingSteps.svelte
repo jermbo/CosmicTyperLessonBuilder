@@ -1,7 +1,7 @@
 <script>
   import { FormGroup, Input, Label } from "sveltestrap";
 
-  export let steps;
+  export let steps = [];
 
   $: weird = steps.join("\n");
 

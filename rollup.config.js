@@ -1,12 +1,13 @@
 import svelte from "rollup-plugin-svelte";
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
-import autoPreprocess from "svelte-preprocess";
-import alias from "@rollup/plugin-alias";
+import postcss from "rollup-plugin-postcss";
+import replace from "@rollup/plugin-replace";
 
 const production = !process.env.ROLLUP_WATCH;
+const API = process.env.API || "/api";
 
 export default {
   input: "src/main.js",
@@ -17,27 +18,47 @@ export default {
     file: "public/build/bundle.js",
   },
   plugins: [
+    replace({
+      // 2 level deep object should be stringify
+      process: JSON.stringify({
+        env: {
+          isProd: production,
+          SVELTE_APP_API: "http://localhost:10888/api",
+        },
+      }),
+    }),
     svelte({
+      // enable run-time checks when not in production
       dev: !production,
-      css: css => {
+      // we'll extract any component CSS out into
+      // a separate file - better for performance
+      css: (css) => {
         css.write("public/build/bundle.css");
       },
-      preprocess: autoPreprocess(),
     }),
-    alias({
-      entries: [
-        { find: "Comps", replacement: `${__dirname}/src/components` },
-        { find: "Stores", replacement: `${__dirname}/src/stores` },
-        { find: "Scripts", replacement: `${__dirname}/src/scripts` },
-      ],
-    }),
+    postcss(),
+
+    // If you have external dependencies installed from
+    // npm, you'll most likely need these plugins. In
+    // some cases you'll need additional configuration -
+    // consult the documentation for details:
+    // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
-      dedupe: importee => importee === "svelte" || importee.startsWith("svelte/"),
+      dedupe: ["svelte"],
     }),
     commonjs(),
+
+    // In dev mode, call `npm run start` once
+    // the bundle has been generated
     !production && serve(),
+
+    // Watch the `public` directory and refresh the
+    // browser on changes when not in production
     !production && livereload("public"),
+
+    // If we're building for production (npm run build
+    // instead of npm run dev), minify
     production && terser(),
   ],
   watch: {

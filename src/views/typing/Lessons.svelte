@@ -50,7 +50,8 @@
   }
 
   function clear() {
-    selected = null;
+    console.log("clear");
+    selected = undefined;
   }
 
   function select({ detail: lesson }) {

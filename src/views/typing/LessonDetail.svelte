@@ -58,7 +58,7 @@
 <header class="my-4 d-flex justify-content-between">
   <h3>{editingLesson.title}</h3>
   <div>
-    <Button outline color="danger" on:clicked={clear}>Cancel</Button>
+    <Button outline color="danger" on:click={clear}>Cancel</Button>
     <Button outline color="primary" on:click={saveLesson}>Save Lesson</Button>
   </div>
 </header>

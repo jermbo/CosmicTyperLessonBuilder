@@ -36,11 +36,7 @@
   <NavbarToggler on:click={() => (isOpen = !isOpen)} />
   <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
     <Nav class="" navbar>
-      <NavItem
-        active={() => {
-          console.log('what');
-          getProps();
-        }}>
+      <NavItem>
         <Link to="/web-lessons">Web Lessons</Link>
       </NavItem>
       <NavItem>

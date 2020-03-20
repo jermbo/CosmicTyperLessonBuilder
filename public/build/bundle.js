@@ -893,7 +893,7 @@
       }
     }
 
-    var css_248z = "body {\n  background: #e5e5e5; }\n";
+    var css_248z = "body {\n  background: #e5e5e5; }\n\n.nav-item a {\n  color: black;\n  margin-right: 1.2rem; }\n";
     styleInject(css_248z);
 
     const subscriber_queue = [];
@@ -12761,7 +12761,7 @@
     	return child_ctx;
     }
 
-    // (62:4) <Button outline color="danger" on:clicked={clear}>
+    // (62:4) <Button outline color="danger" on:click={clear}>
     function create_default_slot_9$1(ctx) {
     	let t;
 
@@ -12781,7 +12781,7 @@
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(62:4) <Button outline color=\\\"danger\\\" on:clicked={clear}>",
+    		source: "(62:4) <Button outline color=\\\"danger\\\" on:click={clear}>",
     		ctx
     	});
 
@@ -12973,7 +12973,7 @@
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[16];
     			option.value = option.__value;
-    			add_location(option, file$q, 86, 10, 2037);
+    			add_location(option, file$q, 86, 10, 2035);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -13035,12 +13035,12 @@
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$q, 84, 8, 1940);
+    			add_location(option, file$q, 84, 8, 1938);
     			attr_dev(select, "name", "difficulty");
     			attr_dev(select, "id", "difficulty");
     			attr_dev(select, "class", "form-control");
     			if (/*editingLesson*/ ctx[0].difficulty === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
-    			add_location(select, file$q, 79, 6, 1798);
+    			add_location(select, file$q, 79, 6, 1796);
     		},
     		m: function mount(target, anchor, remount) {
     			mount_component(label, target, anchor);
@@ -13466,10 +13466,10 @@
     			t1 = space();
     			pre = element("pre");
     			t2 = text(t2_value);
-    			add_location(h4, file$q, 101, 4, 2458);
+    			add_location(h4, file$q, 101, 4, 2456);
     			set_style(pre, "max-height", "70vh");
     			set_style(pre, "overflow-x", "auto");
-    			add_location(pre, file$q, 102, 4, 2483);
+    			add_location(pre, file$q, 102, 4, 2481);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -13599,7 +13599,7 @@
     			$$inline: true
     		});
 
-    	button0.$on("clicked", /*clear*/ ctx[3]);
+    	button0.$on("click", /*clear*/ ctx[3]);
 
     	const button1 = new Button({
     			props: {
@@ -14042,7 +14042,7 @@
     	return block;
     }
 
-    // (44:8) <Link to="/web-lessons">
+    // (40:8) <Link to="/web-lessons">
     function create_default_slot_6$2(ctx) {
     	let t;
 
@@ -14062,14 +14062,14 @@
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(44:8) <Link to=\\\"/web-lessons\\\">",
+    		source: "(40:8) <Link to=\\\"/web-lessons\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:6) <NavItem         active={() => {           console.log('what');           getProps();         }}>
+    // (39:6) <NavItem>
     function create_default_slot_5$2(ctx) {
     	let current;
 
@@ -14093,7 +14093,7 @@
     		p: function update(ctx, dirty) {
     			const link_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				link_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14117,14 +14117,14 @@
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(39:6) <NavItem         active={() => {           console.log('what');           getProps();         }}>",
+    		source: "(39:6) <NavItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (47:8) <Link to="/typing-lessons">
+    // (43:8) <Link to="/typing-lessons">
     function create_default_slot_4$2(ctx) {
     	let t;
 
@@ -14144,14 +14144,14 @@
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(47:8) <Link to=\\\"/typing-lessons\\\">",
+    		source: "(43:8) <Link to=\\\"/typing-lessons\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (46:6) <NavItem>
+    // (42:6) <NavItem>
     function create_default_slot_3$2(ctx) {
     	let current;
 
@@ -14175,7 +14175,7 @@
     		p: function update(ctx, dirty) {
     			const link_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				link_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14199,7 +14199,7 @@
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(46:6) <NavItem>",
+    		source: "(42:6) <NavItem>",
     		ctx
     	});
 
@@ -14213,7 +14213,6 @@
 
     	const navitem0 = new NavItem({
     			props: {
-    				active: /*func*/ ctx[4],
     				$$slots: { default: [create_default_slot_5$2] },
     				$$scope: { ctx }
     			},
@@ -14243,14 +14242,14 @@
     		p: function update(ctx, dirty) {
     			const navitem0_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				navitem0_changes.$$scope = { dirty, ctx };
     			}
 
     			navitem0.$set(navitem0_changes);
     			const navitem1_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				navitem1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14310,7 +14309,7 @@
     		p: function update(ctx, dirty) {
     			const nav_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				nav_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14391,7 +14390,7 @@
     		p: function update(ctx, dirty) {
     			const navbarbrand_changes = {};
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				navbarbrand_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14399,7 +14398,7 @@
     			const collapse_changes = {};
     			if (dirty & /*isOpen*/ 1) collapse_changes.isOpen = /*isOpen*/ ctx[0];
 
-    			if (dirty & /*$$scope*/ 32) {
+    			if (dirty & /*$$scope*/ 16) {
     				collapse_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14466,7 +14465,7 @@
     		p: function update(ctx, [dirty]) {
     			const navbar_changes = {};
 
-    			if (dirty & /*$$scope, isOpen*/ 33) {
+    			if (dirty & /*$$scope, isOpen*/ 17) {
     				navbar_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14528,11 +14527,6 @@
     	validate_slots("Nav", $$slots, []);
     	const click_handler = () => $$invalidate(0, isOpen = !isOpen);
 
-    	const func = () => {
-    		console.log("what");
-    		getProps();
-    	};
-
     	$$self.$capture_state = () => ({
     		Collapse,
     		Navbar,
@@ -14561,7 +14555,7 @@
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [isOpen, handleUpdate, activeRoute, click_handler, func];
+    	return [isOpen, handleUpdate, activeRoute, click_handler];
     }
 
     class Nav_1 extends SvelteComponentDev {
@@ -15200,7 +15194,7 @@
     	}
     }
 
-    const API = {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:10888/api"}}.env.SVELTE_APP_API;
+    const API = {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:3000/typer/api"}}.env.SVELTE_APP_API;
 
     var bind$1 = function bind(fn, thisArg) {
       return function wrap() {
@@ -16171,7 +16165,7 @@
       if (typeof XMLHttpRequest !== 'undefined') {
         // For browsers use XHR adapter
         adapter = xhr;
-      } else if (typeof {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:10888/api"}} !== 'undefined' && Object.prototype.toString.call({"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:10888/api"}}) === '[object {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:10888/api"}}]') {
+      } else if (typeof {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:3000/typer/api"}} !== 'undefined' && Object.prototype.toString.call({"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:3000/typer/api"}}) === '[object {"env":{"isProd":false,"SVELTE_APP_API":"http://localhost:3000/typer/api"}}]') {
         // For node use HTTP adapter
         adapter = xhr;
       }
@@ -16705,7 +16699,7 @@
         getWebLessons(lessons);
         return lessons;
       } catch (error) {
-        return console.log(error);
+        return console.error(error);
       }
     }
 
@@ -18106,7 +18100,7 @@
     	return child_ctx;
     }
 
-    // (61:4) <Button outline color="danger" on:clicked={clear}>
+    // (61:4) <Button outline color="danger" on:click={clear}>
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -18126,7 +18120,7 @@
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(61:4) <Button outline color=\\\"danger\\\" on:clicked={clear}>",
+    		source: "(61:4) <Button outline color=\\\"danger\\\" on:click={clear}>",
     		ctx
     	});
 
@@ -18318,7 +18312,7 @@
     			t = text(t_value);
     			option.__value = option_value_value = /*type*/ ctx[13];
     			option.value = option.__value;
-    			add_location(option, file$u, 85, 10, 2042);
+    			add_location(option, file$u, 85, 10, 2040);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -18380,12 +18374,12 @@
 
     			option.__value = "";
     			option.value = option.__value;
-    			add_location(option, file$u, 83, 8, 1945);
+    			add_location(option, file$u, 83, 8, 1943);
     			attr_dev(select, "name", "difficulty");
     			attr_dev(select, "id", "difficulty");
     			attr_dev(select, "class", "form-control");
     			if (/*editingLesson*/ ctx[0].difficulty === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
-    			add_location(select, file$u, 78, 6, 1803);
+    			add_location(select, file$u, 78, 6, 1801);
     		},
     		m: function mount(target, anchor, remount) {
     			mount_component(label, target, anchor);
@@ -18593,10 +18587,10 @@
     			t1 = space();
     			pre = element("pre");
     			t2 = text(t2_value);
-    			add_location(h4, file$u, 93, 4, 2210);
+    			add_location(h4, file$u, 93, 4, 2208);
     			set_style(pre, "max-height", "70vh");
     			set_style(pre, "overflow-x", "auto");
-    			add_location(pre, file$u, 94, 4, 2235);
+    			add_location(pre, file$u, 94, 4, 2233);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
@@ -18726,7 +18720,7 @@
     			$$inline: true
     		});
 
-    	button0.$on("clicked", /*clear*/ ctx[3]);
+    	button0.$on("click", /*clear*/ ctx[3]);
 
     	const button1 = new Button({
     			props: {
@@ -18994,7 +18988,7 @@
 
     const { console: console_1$5 } = globals;
 
-    // (77:4) <Col>
+    // (78:4) <Col>
     function create_default_slot_4$6(ctx) {
     	let current;
 
@@ -19032,14 +19026,14 @@
     		block,
     		id: create_default_slot_4$6.name,
     		type: "slot",
-    		source: "(77:4) <Col>",
+    		source: "(78:4) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:2) <Row>
+    // (77:2) <Row>
     function create_default_slot_3$6(ctx) {
     	let current;
 
@@ -19086,14 +19080,14 @@
     		block,
     		id: create_default_slot_3$6.name,
     		type: "slot",
-    		source: "(76:2) <Row>",
+    		source: "(77:2) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:2) {#if $typingLessons}
+    // (82:2) {#if $typingLessons}
     function create_if_block$a(ctx) {
     	let current;
 
@@ -19140,14 +19134,14 @@
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(81:2) {#if $typingLessons}",
+    		source: "(82:2) {#if $typingLessons}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:8) {:else}
+    // (90:8) {:else}
     function create_else_block$6(ctx) {
     	let current;
 
@@ -19190,14 +19184,14 @@
     		block,
     		id: create_else_block$6.name,
     		type: "else",
-    		source: "(89:8) {:else}",
+    		source: "(90:8) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:8) {#if !selected}
+    // (85:8) {#if !selected}
     function create_if_block_1$6(ctx) {
     	let current;
 
@@ -19240,14 +19234,14 @@
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(84:8) {#if !selected}",
+    		source: "(85:8) {#if !selected}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:6) <Col>
+    // (84:6) <Col>
     function create_default_slot_2$6(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -19318,14 +19312,14 @@
     		block,
     		id: create_default_slot_2$6.name,
     		type: "slot",
-    		source: "(83:6) <Col>",
+    		source: "(84:6) <Col>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:4) <Row>
+    // (83:4) <Row>
     function create_default_slot_1$9(ctx) {
     	let current;
 
@@ -19372,14 +19366,14 @@
     		block,
     		id: create_default_slot_1$9.name,
     		type: "slot",
-    		source: "(82:4) <Row>",
+    		source: "(83:4) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:0) <Container>
+    // (76:0) <Container>
     function create_default_slot$b(ctx) {
     	let t0;
     	let t1;
@@ -19482,7 +19476,7 @@
     		block,
     		id: create_default_slot$b.name,
     		type: "slot",
-    		source: "(75:0) <Container>",
+    		source: "(76:0) <Container>",
     		ctx
     	});
 
@@ -19597,7 +19591,8 @@
     	}
 
     	function clear() {
-    		$$invalidate(0, selected = null);
+    		console.log("clear");
+    		$$invalidate(0, selected = undefined);
     	}
 
     	function select({ detail: lesson }) {

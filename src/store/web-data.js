@@ -10,7 +10,7 @@ export async function getWebLessonsAction() {
     store.getWebLessons(lessons);
     return lessons;
   } catch (error) {
-    return console.log(error);
+    return console.error(error);
   }
 }
 
